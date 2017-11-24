@@ -20,7 +20,7 @@
 		$row = mysqli_fetch_assoc($result);
 		$user_ID = $row['userID'];	
 
-		$sql = "INSERT INTO trail (userID, trailName, creationDate, trailInfoText, trailShape, difficultyLevel, trailLength) 
+		$sql = "INSERT INTO org_profile (userID, trailName, creationDate, trailInfoText, trailShape, difficultyLevel, trailLength) 
 			VALUES ('$user_ID', '$trail_name', '$trail_creation_date', '$trail_info', '$trail_shape', '$trail_difficulty_level', '$trail_length')";	
 		$result = mysqli_query($conn, $sql);
 

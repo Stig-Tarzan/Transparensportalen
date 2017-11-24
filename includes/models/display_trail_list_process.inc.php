@@ -10,20 +10,20 @@
 	{
 		for ($i=0; $i < count($search_input_exploded); $i++) 
 		{ 
-			$sql = "SELECT * FROM trail,user WHERE trail.userID=user.userID AND trailName LIKE '%$search_input_exploded[$i]%' ";
+			$sql = "SELECT * FROM org_profile,user WHERE org_profile.userID=user.userID AND trailName LIKE '%$search_input_exploded[$i]%' ";
 			$result = mysqli_query($conn, $sql);
 		}
 	}
 	else
 	{
-		$sql = "SELECT * FROM trail,user WHERE trail.userID=user.userID";
+		$sql = "SELECT * FROM org_profile,user WHERE org_profile.userID=user.userID";
 		$result = mysqli_query($conn, $sql);
 	}
 		while ($row = $result->fetch_assoc())  
 		{
 			$trail_name = $row['trailName'];
 
-			$sql_trail_id = "SELECT * FROM trail WHERE trailName='$trail_name'";
+			$sql_trail_id = "SELECT * FROM org_profile WHERE trailName='$trail_name'";
 			$result_trail_id=mysqli_query($conn, $sql_trail_id);
 			$row_trail_id=mysqli_fetch_assoc($result_trail_id);
 			$trail_id = $row_trail_id['trailID'];

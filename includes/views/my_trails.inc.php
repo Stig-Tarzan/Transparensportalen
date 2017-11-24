@@ -5,7 +5,7 @@
 
 
 
-	$sql = "SELECT * FROM trail join (SELECT trail.trailID, SUM(vote) as 'rating' FROM vote,trail WHERE vote.trailID = trail.trailID group by trail.trailID) rate on trail.trailID = rate.trailID WHERE trail.userID='$loged_in'";
+	$sql = "SELECT * FROM org_profile join (SELECT trail.trailID, SUM(vote) as 'rating' FROM vote,org_profile WHERE vote.trailID = trail.trailID group by trail.trailID) rate on trail.trailID = rate.trailID WHERE trail.userID='$loged_in'";
 	$result = mysqli_query($conn, $sql);
 
 		while ($row = $result->fetch_assoc())  //Runs through the entire result

@@ -3,7 +3,7 @@
 	session_start();
 
 	$trail_name = $_POST['trail_name'];
-	$sql = "SELECT * FROM trail WHERE trailName = '$trail_name'";
+	$sql = "SELECT * FROM org_profile WHERE trailName = '$trail_name'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	$trail_id = $row['trailID'];

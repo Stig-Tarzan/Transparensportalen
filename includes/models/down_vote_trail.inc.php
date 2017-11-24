@@ -8,7 +8,7 @@
 
 		$trail_name_value = $_POST['trail_name_value'];
 
-		$sql = "SELECT * FROM trail WHERE trailName='$trail_name_value'";
+		$sql = "SELECT * FROM org_profile WHERE trailName='$trail_name_value'";
 		$result = mysqli_query($conn, $sql);
 		$row= mysqli_fetch_assoc($result);
 

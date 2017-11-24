@@ -6,12 +6,12 @@
 	{
 		$trail_name = $_POST['trail_name_value'];
 
-		$sql="SELECT * FROM trail WHERE trailName='$trail_name'";
+		$sql="SELECT * FROM org_profile WHERE trailName='$trail_name'";
 
 		$result = mysqli_query($conn, $sql);
 		if (!$result) 
 		{
-			echo "Trail not found";
+			echo "org_profile not found";
 		}
 		else
 		{

@@ -18,13 +18,13 @@
 	{
 		for ($i=0; $i < count($search_input_exploded); $i++) 
 		{ 
-			$sql = "SELECT * FROM user,trail join (SELECT trail.trailID, SUM(vote) as 'rating' FROM vote,trail WHERE vote.trailID = trail.trailID group by trail.trailID) rate on trail.trailID = rate.trailID WHERE trail.userID=user.userID AND trailName LIKE '%$search_input_exploded[$i]%' ORDER BY $filter $order";
+			$sql = "SELECT * FROM user,org_profile join (SELECT org_profile.trailID, SUM(vote) as 'rating' FROM vote,org_profile WHERE vote.trailID = org_profile.trailID group by org_profile.trailID) rate on org_profile.trailID = rate.trailID WHERE org_profile.userID=user.userID AND trailName LIKE '%$search_input_exploded[$i]%' ORDER BY $filter $order";
 			$result = mysqli_query($conn, $sql);
 		}
 	}
 	else
 	{
-		$sql = "SELECT * FROM user,trail join (SELECT trail.trailID, SUM(vote) as 'rating' FROM vote,trail WHERE vote.trailID = trail.trailID group by trail.trailID) rate on trail.trailID = rate.trailID WHERE trail.userID=user.userID ORDER BY $filter $order";
+		$sql = "SELECT * FROM user,org_profile join (SELECT org_profile.trailID, SUM(vote) as 'rating' FROM vote,org_profile WHERE vote.trailID = org_profile.trailID group by org_profile.trailID) rate on org_profile.trailID = rate.trailID WHERE org_profile.userID=user.userID ORDER BY $filter $order";
 		$result = mysqli_query($conn, $sql);
 	}
 

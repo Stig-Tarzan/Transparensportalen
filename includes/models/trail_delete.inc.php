@@ -5,7 +5,7 @@
 	if (isset($_POST['trail_name'])) 
 	{
 		$trail_name = $_POST['trail_name'];
-		$sql= "DELETE FROM trail WHERE trailName = '$trail_name'";
+		$sql= "DELETE FROM org_profile WHERE trailName = '$trail_name'";
 		$result = mysqli_query($conn, $sql);
 
 		if (!$result) 

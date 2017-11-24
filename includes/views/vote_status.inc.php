@@ -5,13 +5,13 @@
 
     $trail_creator = $_POST['trail_creator'];
     $trail_name = $_POST['trail_name_value'];
-    $sql = "SELECT * FROM trail WHERE trailName = '$trail_name'";
+    $sql = "SELECT * FROM org_profile WHERE trailName = '$trail_name'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $trail_id = $row['trailID'];
 
 
-    $sql_vote = "SELECT * FROM user,trail join (SELECT trail.trailID, SUM(vote) as 'rating' FROM vote,trail WHERE vote.trailID = trail.trailID group by trail.trailID) rate on trail.trailID = rate.trailID WHERE trail.userID=user.userID AND trail.trailName = '$trail_name'";
+    $sql_vote = "SELECT * FROM user,org_profile join (SELECT org_profile.trailID, SUM(vote) as 'rating' FROM vote,org_profile WHERE vote.trailID = org_profile.trailID group by org_profile.trailID) rate on org_profile.trailID = rate.trailID WHERE org_profile.userID=user.userID AND org_profile.trailName = '$trail_name'";
     $result_vote = mysqli_query($conn, $sql_vote);
     $row_vote = mysqli_fetch_assoc($result_vote);
     $rating = $row_vote['rating'];

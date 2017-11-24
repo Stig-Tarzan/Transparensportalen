@@ -10,7 +10,7 @@
   $trail_creator = $_POST['trail_creator'];
   $selected_trail = $_POST['selected_trail'];
   $trail_name = $_POST['trail_name'];
-  $sql = "SELECT * FROM trail WHERE trailName = '$trail_name'";
+  $sql = "SELECT * FROM org_profile WHERE trailName = '$trail_name'";
   $result = mysqli_query($conn, $sql);
 
 /*  $sql_vote = "SELECT * FROM user,trail join (SELECT trail.trailID, SUM(vote) as 'rating' FROM vote,trail WHERE vote.trailID = trail.trailID group by trail.trailID) rate on trail.trailID = rate.trailID WHERE trail.userID=user.userID AND trail.trailName = '$trail_name'";

@@ -20,7 +20,7 @@ session_start();
 		{
 			$trail_name = $row['trailName'];
 
-			$sql_trail_id = "SELECT * FROM trail WHERE trailName='$trail_name'";
+			$sql_trail_id = "SELECT * FROM org_profile WHERE trailName='$trail_name'";
 			$result_trail_id=mysqli_query($conn, $sql_trail_id);
 			$row_trail_id=mysqli_fetch_assoc($result_trail_id);
 			$trail_id = $row_trail_id['trailID'];

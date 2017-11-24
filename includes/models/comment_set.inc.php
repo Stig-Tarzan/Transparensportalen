@@ -11,7 +11,7 @@
 		$trail_name = mysqli_real_escape_string ($conn,$_POST['comment_trail_name']);
 		$date = mysqli_real_escape_string ($conn,$_POST['comment_date']);
 
-		$sql= "SELECT * FROM trail WHERE trailName = '$trail_name'";
+		$sql= "SELECT * FROM org_profile WHERE trailName = '$trail_name'";
 
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);

@@ -1,6 +1,6 @@
 <?php  
 
-      $conn = mysqli_connect('localhost','root','','lammeltaget');
+      $conn = mysqli_connect('localhost','root','','transparensportalen');
       if (!$conn) 
       {
             die("Connection failed: ".mysqli_connect_error());

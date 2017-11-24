@@ -5,7 +5,7 @@
 
 
 
-	$sql = "SELECT * FROM org_profile join (SELECT trail.trailID, SUM(vote) as 'rating' FROM vote,org_profile WHERE vote.trailID = trail.trailID group by trail.trailID) rate on trail.trailID = rate.trailID WHERE trail.userID='$loged_in'";
+	$sql = "SELECT * FROM org_profile join (SELECT org_profile.trailID, SUM(vote) as 'rating' FROM vote,org_profile WHERE vote.trailID = org_profile.trailID group by org_profile.trailID) rate on org_profile.trailID = rate.trailID WHERE org_profile.userID='$loged_in'";
 	$result = mysqli_query($conn, $sql);
 
 		while ($row = $result->fetch_assoc())  //Runs through the entire result
@@ -18,7 +18,7 @@
 			echo "<img src='assets/img/maps_icon.png' class='trail_img'><div class='trail_content_info'>";
 			echo "<label id='trail_name_in_list'>" . $row['trailName'] . "</label> <br>	";
 			echo "<label class='trail_list_difficulty'>Svårighet:<label>" . $row['difficultyLevel'] . "<br>";
-			echo "<label class='trail_list_length'>Längd:<label>" . $row['trailLength'] . "<br>";
+			
 			
 			echo "</div>";
 			

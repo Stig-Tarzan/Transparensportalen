@@ -10,7 +10,7 @@ session_start();
 		
 
 
-	$sql = "SELECT * FROM trail,user WHERE trail.userID=user.userID";
+	$sql = "SELECT * FROM org_profile,user WHERE org_profile.userID=user.userID";
 	$result = mysqli_query($conn, $sql);
 
 

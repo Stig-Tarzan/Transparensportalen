@@ -3,7 +3,9 @@
  -->
 <?php
 	$org_input = "
+			<label id='org_info_topic'>Organisationsinformation</label>
 			<div id='name_orgno_container'>
+
 			<input name='org_name_value' id='org_name_value' placeholder=' Företagsnamn'>
 			<input name='org_no_value' id='org_number_value' placeholder=' xxxxxx-xxxx'></div>
 			<label id='site_adress_topic'>Adress</label>

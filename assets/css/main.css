@@ -8,10 +8,12 @@ body
 #att_add_button {
 	background-image: url(../img/add_trail.png);
 	background-size: 100%,100%;
-	width: 2vw;
-	height: 2vw;
+	width: 1.5em;
+	height: 1.5em;
 	display: inline-block;
 	background-repeat: no-repeat;
+		bottom:-0.4em;
+	position: relative;
 }
 #att_addinfo_outer {
 
@@ -21,11 +23,22 @@ body
 	
 
 }
+#remove_button {
+	background-image: url(../img/remove_close.png);
+	background-size: 100%,100%;
+	width: 1.5em;
+	height: 1.5em;
+	display: inline-block;
+	background-repeat: no-repeat;
+	bottom:-5px;
+	position: relative;
+
+}
 
 #save_site {
 	
 
-	    width: 80px;
+	  width: 80px;
       height: 20px;
       line-height: 15px;
       border-radius: 2px;
@@ -64,6 +77,13 @@ body
 	background-color: white;
 	
 
+}
+#added_sites_container{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 0.5em;
+	color: gray;	
 }
 #add_site_container{
 	margin-top: 5px;

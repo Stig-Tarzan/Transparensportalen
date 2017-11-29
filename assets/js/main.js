@@ -79,7 +79,7 @@ var poly_total;
 	$('#content_bot').on('click', '#save_site',function () {
 		
 
-		$('<div calss="sites">' + $("#site_name_value").val() + '</div>').appendTo('#added_sites_container');
+		$('<div calss="sites">' + $("#site_name_value").val() + '<div id="remove_button"></div></div>').appendTo('#added_sites_container');
 	
 		$("#att_addinfo_inner").css("display", "none");
 	hasSite++;

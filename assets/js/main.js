@@ -398,14 +398,6 @@ var poly_total;
 		$('#save_icon').css("display", "none");
 		document.getElementById("content_top").innerHTML = "";
 
-      var trail_name_value = $('#trail_name').val();
-      var trail_difficulty_level_value = $('#trail_difficulty').val();
-      var trail_creation_date_value = $('#trail_creation_date').val();
-      var trail_info_value = $('#trail_info').val();
-      var trail_info_value_cleaned = trail_info_value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-      var trail_shape_value_raw = poly.getPath().getArray().toString();
-      var trail_shape_value = trail_shape_value_raw.replace(/[() ]/g, '');
-      var trail_length_value = $('#trail_length').val();
       var org_street_value = $('#org_street_value').val();
       var org_postno_value = $('#org_postno_value').val();
       var org_city_value = $('#org_city_value').val();

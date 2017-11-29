@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 29, 2017 at 12:52 PM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Värd: 127.0.0.1
+-- Tid vid skapande: 29 nov 2017 kl 15:00
+-- Serverversion: 5.7.14
+-- PHP-version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `transparensportalen`
+-- Databas: `transparensportalen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attribute-org-site`
+-- Tabellstruktur `attribute-org-site`
 --
 
 CREATE TABLE `attribute-org-site` (
@@ -36,7 +36,7 @@ CREATE TABLE `attribute-org-site` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attributes`
+-- Tabellstruktur `attributes`
 --
 
 CREATE TABLE `attributes` (
@@ -46,7 +46,7 @@ CREATE TABLE `attributes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `attributes`
+-- Dumpning av Data i tabell `attributes`
 --
 
 INSERT INTO `attributes` (`attributeID`, `griName`, `griNo`) VALUES
@@ -66,7 +66,7 @@ INSERT INTO `attributes` (`attributeID`, `griName`, `griNo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Tabellstruktur `comment`
 --
 
 CREATE TABLE `comment` (
@@ -78,7 +78,7 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `comment`
+-- Dumpning av Data i tabell `comment`
 --
 
 INSERT INTO `comment` (`commentID`, `trailID`, `userID`, `content`, `date`) VALUES
@@ -91,31 +91,32 @@ INSERT INTO `comment` (`commentID`, `trailID`, `userID`, `content`, `date`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `org_profile`
+-- Tabellstruktur `org_profile`
 --
 
 CREATE TABLE `org_profile` (
   `orgID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
+  `userName` text NOT NULL,
   `orgName` text NOT NULL,
   `creationDate` date NOT NULL,
   `orgInfoText` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `org_profile`
+-- Dumpning av Data i tabell `org_profile`
 --
 
-INSERT INTO `org_profile` (`orgID`, `userID`, `orgName`, `creationDate`, `orgInfoText`) VALUES
-(43, 60, 'Led runt Ã–ningby', '2017-05-28', 'HÃ¤r tar vi en tur runt byn, Ã–ningeby'),
-(44, 62, 'Henriksfaran', '2017-05-28', 'En krÃ¤vande tur fÃ¶r de erfarna. Ta med rikligt med nÃ¤ring och dryck!'),
-(48, 60, 'Sarek', '2017-05-30', 'Sarek Ã¤r en av fÃ¥ nationalparker i Sverige dÃ¤r det inte finns nÃ¥gra bekvÃ¤mligheter fÃ¶r besÃ¶karna. Det finns inga stugor, spÃ¤nger eller markerade leder. Om du som vandrare mÃ¶ter renar Ã¤r det viktigt att inte skrÃ¤mma djuren. SÃ¤tt dig och vÃ¤nta pÃ¥ att renarna passerar eller gÃ¥ runt de betande djuren fÃ¶r att inte stÃ¶ra.'),
-(51, 60, 'Muddus nationalpark', '2017-05-30', 'En tur runt muddus nationalpark.\n\nMuddus Ã¤r en nationalpark i Lappland, Sverige. Den ligger sydvÃ¤st om GÃ¤llivare tÃ¤tort; stÃ¶rre delen av Muddus ligger i GÃ¤llivare kommun och resterande del i Jokkmokks kommun.');
+INSERT INTO `org_profile` (`orgID`, `userID`, `userName`, `orgName`, `creationDate`, `orgInfoText`) VALUES
+(43, 60, '', 'Led runt Ã–ningby', '2017-05-28', 'HÃ¤r tar vi en tur runt byn, Ã–ningeby'),
+(44, 62, '', 'Henriksfaran', '2017-05-28', 'En krÃ¤vande tur fÃ¶r de erfarna. Ta med rikligt med nÃ¤ring och dryck!'),
+(48, 77, '', 'Sarek', '2017-05-30', 'Sarek Ã¤r en av fÃ¥ nationalparker i Sverige dÃ¤r det inte finns nÃ¥gra bekvÃ¤mligheter fÃ¶r besÃ¶karna. Det finns inga stugor, spÃ¤nger eller markerade leder. Om du som vandrare mÃ¶ter renar Ã¤r det viktigt att inte skrÃ¤mma djuren. SÃ¤tt dig och vÃ¤nta pÃ¥ att renarna passerar eller gÃ¥ runt de betande djuren fÃ¶r att inte stÃ¶ra.'),
+(51, 77, '', 'Muddus nationalpark', '2017-05-30', 'En tur runt muddus nationalpark.\n\nMuddus Ã¤r en nationalpark i Lappland, Sverige. Den ligger sydvÃ¤st om GÃ¤llivare tÃ¤tort; stÃ¶rre delen av Muddus ligger i GÃ¤llivare kommun och resterande del i Jokkmokks kommun.');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `site`
+-- Tabellstruktur `site`
 --
 
 CREATE TABLE `site` (
@@ -128,7 +129,7 @@ CREATE TABLE `site` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Tabellstruktur `user`
 --
 
 CREATE TABLE `user` (
@@ -147,7 +148,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumpning av Data i tabell `user`
 --
 
 INSERT INTO `user` (`userID`, `admin`, `userName`, `email`, `password`, `salt`, `firstName`, `lastName`, `dateOfBirth`, `adress`, `postalCode`, `postalCity`) VALUES
@@ -155,15 +156,15 @@ INSERT INTO `user` (`userID`, `admin`, `userName`, `email`, `password`, `salt`, 
 (62, 0, 'Jan-Emanuel', 'Janne61@gmail.com', '1f831c9452f8c7852558b2cec79b14f045ece615', '3ed2347ddacbb088c9419a', '0', 'Evert', '1961-01-21', 'Hans', '74249', 'StrÃ¤ngnÃ¤s'),
 (63, 0, 'Hanky', 'hank@gmail.se', '21db5d60ddc66919711035e197867513176617e2', 'a15c8eee9f0fc3bc818be2', '0', 'henkeland@gmail.se', '1991-01-28', 'VÃ¤ktargatan 25', '75422', 'Uppsala'),
 (76, 0, 'henk', 'henk@gag.se', '3e3796873726f456713d2268c9661c1f9984939e', '12864b4a55ae90afdf9401', 'ralf', 'raffe', '2015-11-01', 'asd 1', '85212', 'uppsala'),
-(77, 0, 'admin', 'asdasd@asds.se', 'c8f3d8f139d56d11dd489807babef8b721196fcb', '0cde2d058064f2a9853a9c', 'admin', 'admin', '2015-11-11', 'asd 1', '85252', 'uppsala'),
-(78, 0, 'john.f.almqvist@gmail.com', 'john.f.almqvist@gmail.com', '767e67927a232baa7184dabdceaedc40ace905e0', 'fc0f9b8b11ba9eea1f8d1d', 'John', 'Almqvist', '1991-01-28', 'VÃ¤ktargatan 26A', '75422', 'UPPSALA');
+(77, 1, 'admin', 'asdasd@asds.se', 'c8f3d8f139d56d11dd489807babef8b721196fcb', '0cde2d058064f2a9853a9c', 'admin', 'admin', '2015-11-11', 'asd 1', '85252', 'uppsala'),
+(78, 0, 'transparent rock', 'john.f.almqvist@gmail.com', '767e67927a232baa7184dabdceaedc40ace905e0', 'fc0f9b8b11ba9eea1f8d1d', 'John', 'Almqvist', '1991-01-28', 'VÃ¤ktargatan 26A', '75422', 'UPPSALA');
 
 --
--- Indexes for dumped tables
+-- Index för dumpade tabeller
 --
 
 --
--- Indexes for table `attribute-org-site`
+-- Index för tabell `attribute-org-site`
 --
 ALTER TABLE `attribute-org-site`
   ADD KEY `orgID` (`orgID`),
@@ -171,13 +172,13 @@ ALTER TABLE `attribute-org-site`
   ADD KEY `siteID` (`siteID`);
 
 --
--- Indexes for table `attributes`
+-- Index för tabell `attributes`
 --
 ALTER TABLE `attributes`
   ADD PRIMARY KEY (`attributeID`);
 
 --
--- Indexes for table `comment`
+-- Index för tabell `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`commentID`),
@@ -185,7 +186,7 @@ ALTER TABLE `comment`
   ADD KEY `userID` (`userID`);
 
 --
--- Indexes for table `org_profile`
+-- Index för tabell `org_profile`
 --
 ALTER TABLE `org_profile`
   ADD PRIMARY KEY (`orgID`),
@@ -193,14 +194,14 @@ ALTER TABLE `org_profile`
   ADD KEY `trailID` (`orgID`);
 
 --
--- Indexes for table `site`
+-- Index för tabell `site`
 --
 ALTER TABLE `site`
   ADD PRIMARY KEY (`siteID`),
   ADD KEY `orgID` (`orgID`);
 
 --
--- Indexes for table `user`
+-- Index för tabell `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userID`),
@@ -208,53 +209,53 @@ ALTER TABLE `user`
   ADD KEY `userID` (`userID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT för dumpade tabeller
 --
 
 --
--- AUTO_INCREMENT for table `attributes`
+-- AUTO_INCREMENT för tabell `attributes`
 --
 ALTER TABLE `attributes`
   MODIFY `attributeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT for table `comment`
+-- AUTO_INCREMENT för tabell `comment`
 --
 ALTER TABLE `comment`
   MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 --
--- AUTO_INCREMENT for table `org_profile`
+-- AUTO_INCREMENT för tabell `org_profile`
 --
 ALTER TABLE `org_profile`
   MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
--- AUTO_INCREMENT for table `site`
+-- AUTO_INCREMENT för tabell `site`
 --
 ALTER TABLE `site`
   MODIFY `siteID` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT för tabell `user`
 --
 ALTER TABLE `user`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
--- Constraints for dumped tables
+-- Restriktioner för dumpade tabeller
 --
 
 --
--- Constraints for table `attribute-org-site`
+-- Restriktioner för tabell `attribute-org-site`
 --
 ALTER TABLE `attribute-org-site`
   ADD CONSTRAINT `attribute-org-site_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `attribute-org-site_ibfk_2` FOREIGN KEY (`attributeID`) REFERENCES `attributes` (`attributeID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `org_profile`
+-- Restriktioner för tabell `org_profile`
 --
 ALTER TABLE `org_profile`
   ADD CONSTRAINT `org_profile_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `site`
+-- Restriktioner för tabell `site`
 --
 ALTER TABLE `site`
   ADD CONSTRAINT `site_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE;

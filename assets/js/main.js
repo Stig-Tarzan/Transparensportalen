@@ -353,7 +353,7 @@ var poly_total;
 	$('#user_section').on('click', '#login_button',function () {
 		var user_name = $('#username_input').val();
 		var password =$('#password_input').val();
-		var data = { username_value: user_name, password_value: password }
+		var data = { username_value: user_name, password_value: password };
 
 		if(user_name == ""|| password == "")
 		{
@@ -399,7 +399,7 @@ var poly_total;
 		document.getElementById("content_top").innerHTML = "";
 
 		var org_number_value = $('#org_number_value').val();
-		var org_name_value = $('#org_number_value').val();
+		var org_name_value = $('#org_name_value').val();
      	var org_street_value = $('#org_street_value').val();
       	var org_postnumber_value = $('#org_postno_value').val();
      	var org_city_value = $('#org_city_value').val();
@@ -412,15 +412,15 @@ var poly_total;
         org_number_value: org_number_value, 
         org_name_value: org_name_value, 
         org_street_value: org_street_value,
-        org_postno_value: org_postno_value,
+        org_postnumber_value: org_postnumber_value,
         org_city_value: org_city_value,
         org_creation_date_value: org_creation_date_value,
-        org_info_value: org_info_value_cleaned,
-      }
+        org_info_value: org_info_value_cleaned
+      };
 
-      $.post('includes/models/org_process.inc.php', 
+      $.post("includes/models/org_process.inc.php", 
         data
-        ,function(data, status)
+        , function(data, status)
       {
         alert(data);
       });
@@ -436,17 +436,15 @@ var poly_total;
 		$('#undo_icon').css("display", "none");
 		$('#save_icon').css("display", "none");
 		document.getElementById("content_top").innerHTML = "";
-
-
    
       var data = 
       { 
         site_list_value: site_list 
       }
 
-      $.post('includes/models/site_process.inc.php', 
+      $.post("includes/models/site_process.inc.php" , 
         data
-        ,function(data, status)
+        , function(data, status)
       {
         alert(data);
       });

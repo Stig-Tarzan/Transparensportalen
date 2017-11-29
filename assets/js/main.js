@@ -622,7 +622,7 @@ $('#filter_container').on('click', '.alpha_button',function () {
 		$('#content_bot').load('includes/views/trail_info.inc.php');
 		$("#add_trail").css("display", "none");
 		$("#add_trail").css('bottom', '2%');
-		$('#undo_icon').css("display", "flex");
+		/*$('#undo_icon').css("display", "flex");*/
 		$('#save_icon').css("display", "flex");
 		$('#comment_icon').css("display", "none");
 		$('#content_bot').css('display', 'initial');

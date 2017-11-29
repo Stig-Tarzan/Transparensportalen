@@ -7,7 +7,7 @@
 	if (isset($_POST['org_number_value'])) 
 	{
 		$user_name = mysqli_real_escape_string ($conn,$_SESSION['user_name']);
-		$org_number = mysqli_real_escape_string ($conn,$_POST['org_number_value'])
+		$org_number = mysqli_real_escape_string ($conn,$_POST['org_number_value']);
 		$org_street = mysqli_real_escape_string ($conn,$_POST['org_street_value']);
 		$org_name = mysqli_real_escape_string ($conn,$_POST['org_name_value']);
 		$org_postnumber = mysqli_real_escape_string ($conn,$_POST['org_postnumber_value']);
@@ -27,11 +27,11 @@
 
 		if ($result) 
 		{
-			echo "Led registrerad";
+			echo "Organisation registrerad";
 		}
 		else
 		{
-			echo "Led inte registrerad";
+			echo "Organisation inte registrerad";
 		}
 	}
 

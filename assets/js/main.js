@@ -398,7 +398,8 @@ var poly_total;
 		$('#save_icon').css("display", "none");
 		document.getElementById("content_top").innerHTML = "";
 
-		var org_number_value = $('#org_no').val();
+		var org_number_value = $('#org_number_value').val();
+		var org_name_value = $('#org_number_value').val();
      	var org_street_value = $('#org_street_value').val();
       	var org_postno_value = $('#org_postno_value').val();
      	var org_city_value = $('#org_city_value').val();

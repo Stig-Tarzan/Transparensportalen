@@ -60,13 +60,13 @@ body
   	margin-bottom: 20px;
   	padding-bottom: 10px;
 	width: 100%;
-	height: 100%;
+	height: 115%;
 	background-color: white;
 	
 
 }
 #add_site_container{
-	margin-top: 5%;
+	margin-top: 5px;
 	display: inline;
 	margin-left: 2%;
 	width: 300px;

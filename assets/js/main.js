@@ -406,6 +406,12 @@ var poly_total;
       var trail_shape_value_raw = poly.getPath().getArray().toString();
       var trail_shape_value = trail_shape_value_raw.replace(/[() ]/g, '');
       var trail_length_value = $('#trail_length').val();
+      var org_street_value = $('#org_street_value').val();
+      var org_postno_value = $('#org_postno_value').val();
+      var org_city_value = $('#org_city_value').val();
+      var org_creation_date_value = $('#org_creation_date').val();
+      var org_info_value = $('#org_info_value').val();
+      var org_info_value_cleaned = trail_info_value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
    
       var data = 
       { 

@@ -387,7 +387,7 @@ var poly_total;
 	//***************************************************
 
 
-	//*************Register trail*********************
+	//*************Save organization*********************
     $('#main_section').on('click', '#save_icon',function () 
 
     {
@@ -418,7 +418,7 @@ var poly_total;
         org_info_value: org_info_value_cleaned,
       }
 
-      $.post('includes/models/trail_process.inc.php', 
+      $.post('includes/models/org_process.inc.php', 
         data
         ,function(data, status)
       {

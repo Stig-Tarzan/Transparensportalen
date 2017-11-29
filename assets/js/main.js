@@ -5,6 +5,9 @@ var agree = false;
 var ishide= false;
 var attributes = new Object();
 var att_list = new Array();
+var site = new Object();
+var site_list = new Array();
+var hasSite = 0;
 
 $(document).ready(function () {
 
@@ -57,11 +60,38 @@ var poly_total;
 
 	//*************add attributes***********************************
 	$('#content_bot').on('click', '#att_add_button',function () {
+		$("#att_addinfo_inner").css("display", "flex");
+
+		if (hasSite === 0){
+			$('<div id="att_addinfo_inner"></div>').appendTo('#attributes_container');
+			$('#att_addinfo_inner').load('includes/views/add_site_info.php');
+		}
+
+		else{
+			$('#att_addinfo_inner').load('includes/views/add_site_info.php');
+		}
+	
 		
 
-		$('<div id="att_addinfo_outer"><div id="att_addinfo_inner"></div></div>').appendTo('#body');
-		$('#main_section').css("display", "none");
-		$('#att_addinfo_inner').load('includes/views/add_site_info.php');
+		
+	});
+	//*************add attributes***********************************
+	$('#content_bot').on('click', '#save_site',function () {
+		
+
+		$('<div calss="sites">' + $("#site_name_value").val() + '</div>').appendTo('#added_sites_container');
+	
+		$("#att_addinfo_inner").css("display", "none");
+	hasSite++;
+
+		site = {name:$("#site_name_value").val(), street:$("#site_street_value").val(), zipcode:$("#site_postno_value").val(), city:$("#site_city_value").val()}
+		$("#site_name_value").val()
+		$("#site_street_value").val()
+		$("#site_postno_value").val()
+		$("#site_city_value").val()
+		site_list.push(site);
+		
+	
 		
 	});
 
@@ -569,7 +599,7 @@ $('#filter_container').on('click', '.alpha_button',function () {
 		$('#content_bot').load('includes/views/trail_info.inc.php');
 		$("#add_trail").css("display", "none");
 		$("#add_trail").css('bottom', '2%');
-		$('#undo_icon').css("display", "flex");
+		/*$('#undo_icon').css("display", "flex");*/
 		$('#save_icon').css("display", "flex");
 		$('#comment_icon').css("display", "none");
 		$('#content_bot').css('display', 'initial');

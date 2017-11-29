@@ -12,6 +12,6 @@
 		<input id='site_street_value' placeholder='Gatunamn'>
 		<input id='site_postno_value' placeholder='Postnummer'>
 		<input id='site_city_value' placeholder='Postort'>
-		</div></div><div id='save_site'></div>
+		</div></div><button id='save_site'>Lägg till</button>
 
 	";

@@ -453,7 +453,6 @@ var poly_total;
         		site_zipcode_value: site_zipcode, 
         		site_city_value: site_city,
         		org_number_value: org_number_value
-
       		}
 
       		$.post("includes/models/site_process.inc.php" , 

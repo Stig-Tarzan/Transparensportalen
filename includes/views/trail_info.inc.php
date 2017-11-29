@@ -4,8 +4,8 @@
 <?php
 	$org_input = "
 			<div id='name_orgno_container'>
-			<input name='trail_name_value' id='trail_name' placeholder=' Företagsnamn'>
-			<input name='org_name_value' id='org_no' placeholder=' xxxxxx-xxxx'></div>
+			<input name='org_name_value' id='org_name' placeholder=' Företagsnamn'>
+			<input name='org_no_value' id='org_no' placeholder=' xxxxxx-xxxx'></div>
 			<label id='site_adress_topic'>Adress</label>
 			<div id='site_adress_container'>
 			<input id='org_street_value' placeholder='Gatunamn'>

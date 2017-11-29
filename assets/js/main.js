@@ -412,7 +412,7 @@ var poly_total;
         org_number_value: org_number_value, 
         org_name_value: org_name_value, 
         org_street_value: org_street_value,
-        org_postno_value: org_postno_value,
+        org_postnumber_value: org_postnumber_value,
         org_city_value: org_city_value,
         org_creation_date_value: org_creation_date_value,
         org_info_value: org_info_value_cleaned,

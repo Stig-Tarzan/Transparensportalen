@@ -411,16 +411,11 @@ var poly_total;
 			, function(data, status)
      		{
         		$('#content_top').load('includes/views/load_trail.inc.php', {trail_creator: trail_creator, selected_trail: data, trail_name: trail_name});
-        		$('#content_top2').load('includes/views/vote_status.inc.php', {trail_creator: trail_creator, trail_name_value: trail_name});
 
         		$('#content_bot').css('display', 'initial');
         		$('#content_bot_2').css('display', 'initial');
         		$('#filter_container').css('display', 'none');
         		$('#content_top2').css("display", "initial");
-
-
-        		$('#content_bot').load('includes/views/comment_form.inc.php', {trail_name: trail_name});
-        		$('#content_bot_2').load('includes/views/comment_display.inc.php', {trail_name: trail_name});
       		});
 
     	});

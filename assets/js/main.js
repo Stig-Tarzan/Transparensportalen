@@ -179,9 +179,6 @@ var poly_total;
 		$('#profile_section').css('width', '20%');
 		$('#profile_section').css('display', 'flex');
 		$('#profile_section').css('box-shadow', '0 14px 28px rgba(0,0,0,0.25) 0 10px 10px rgba(0,0,0,0.22)');	
-		
-		
-		
 
 	});
 
@@ -561,7 +558,7 @@ $('#filter_container').on('click', '.alpha_button',function () {
     });
     //***************************************************
 
-
+	//*************delete user***************************
 	$('#main_section').on('click', '#add_trail',function () 
 	{	
 
@@ -586,9 +583,34 @@ $('#filter_container').on('click', '.alpha_button',function () {
 		
 		$('#content_top').load('includes/views/create_trail.inc.php');
 
-
 	});
 
+		$('#profile_section').on('click', '#create_new_organization',function () 
+	{	
+
+		
+		$('#filter_container').css('display', 'none');
+		$('#content_top').load('includes/views/create_trail.inc.php');
+		$('#content_bot').load('includes/views/trail_info.inc.php');
+		$("#add_trail").css("display", "none");
+		$("#add_trail").css('bottom', '2%');
+		$('#undo_icon').css("display", "flex");
+		$('#save_icon').css("display", "flex");
+		$('#comment_icon').css("display", "none");
+		$('#content_bot').css('display', 'initial');
+		$('#content_bot_2').css("display", "none");
+		$('#content_top2').css("display", "none");
+		$('#delete_trail_button').css("display", "none");
+
+
+	});
+	$('#main_section').on('click', '#undo_icon',function () 
+	{
+		
+		$('#content_top').load('includes/views/create_trail.inc.php');
+
+	});
+    //***************************************************
 	
 
 });

@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Värd: 127.0.0.1
--- Tid vid skapande: 29 nov 2017 kl 15:00
--- Serverversion: 5.7.14
--- PHP-version: 5.6.25
+-- Host: 127.0.0.1
+-- Generation Time: Nov 29, 2017 at 05:15 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,16 +17,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Databas: `transparensportalen`
+-- Database: `transparensportalen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `attribute-org-site`
+-- Table structure for table `attribute-orgs-sites`
 --
 
-CREATE TABLE `attribute-org-site` (
+CREATE TABLE `attribute-orgs-sites` (
   `orgID` int(11) NOT NULL,
   `attributeID` int(11) NOT NULL,
   `siteID` int(11) NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `attribute-org-site` (
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `attributes`
+-- Table structure for table `attributes`
 --
 
 CREATE TABLE `attributes` (
@@ -46,7 +46,7 @@ CREATE TABLE `attributes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumpning av Data i tabell `attributes`
+-- Dumping data for table `attributes`
 --
 
 INSERT INTO `attributes` (`attributeID`, `griName`, `griNo`) VALUES
@@ -66,7 +66,7 @@ INSERT INTO `attributes` (`attributeID`, `griName`, `griNo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `comment`
+-- Table structure for table `comment`
 --
 
 CREATE TABLE `comment` (
@@ -78,7 +78,7 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumpning av Data i tabell `comment`
+-- Dumping data for table `comment`
 --
 
 INSERT INTO `comment` (`commentID`, `trailID`, `userID`, `content`, `date`) VALUES
@@ -91,45 +91,56 @@ INSERT INTO `comment` (`commentID`, `trailID`, `userID`, `content`, `date`) VALU
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `org_profile`
+-- Table structure for table `org_profile`
 --
 
 CREATE TABLE `org_profile` (
   `orgID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
-  `userName` text NOT NULL,
+  `orgNumber` text NOT NULL,
   `orgName` text NOT NULL,
+  `orgStreet` text NOT NULL,
+  `orgPostNumber` int(11) NOT NULL,
+  `orgCity` text NOT NULL,
   `creationDate` date NOT NULL,
   `orgInfoText` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumpning av Data i tabell `org_profile`
+-- Dumping data for table `org_profile`
 --
 
-INSERT INTO `org_profile` (`orgID`, `userID`, `userName`, `orgName`, `creationDate`, `orgInfoText`) VALUES
-(43, 60, '', 'Led runt Ã–ningby', '2017-05-28', 'HÃ¤r tar vi en tur runt byn, Ã–ningeby'),
-(44, 62, '', 'Henriksfaran', '2017-05-28', 'En krÃ¤vande tur fÃ¶r de erfarna. Ta med rikligt med nÃ¤ring och dryck!'),
-(48, 77, '', 'Sarek', '2017-05-30', 'Sarek Ã¤r en av fÃ¥ nationalparker i Sverige dÃ¤r det inte finns nÃ¥gra bekvÃ¤mligheter fÃ¶r besÃ¶karna. Det finns inga stugor, spÃ¤nger eller markerade leder. Om du som vandrare mÃ¶ter renar Ã¤r det viktigt att inte skrÃ¤mma djuren. SÃ¤tt dig och vÃ¤nta pÃ¥ att renarna passerar eller gÃ¥ runt de betande djuren fÃ¶r att inte stÃ¶ra.'),
-(51, 77, '', 'Muddus nationalpark', '2017-05-30', 'En tur runt muddus nationalpark.\n\nMuddus Ã¤r en nationalpark i Lappland, Sverige. Den ligger sydvÃ¤st om GÃ¤llivare tÃ¤tort; stÃ¶rre delen av Muddus ligger i GÃ¤llivare kommun och resterande del i Jokkmokks kommun.');
+INSERT INTO `org_profile` (`orgID`, `userID`, `orgNumber`, `orgName`, `orgStreet`, `orgPostNumber`, `orgCity`, `creationDate`, `orgInfoText`) VALUES
+(52, 77, '1231', 'Hej', 'Hej', 123, 'gsa', '2017-11-29', '123fsaasfgsagf'),
+(53, 77, '1111', 'Henkes', 'VÃ¤ktargatan', 11111, 'UPPSALA', '2017-11-29', 'Bra fÃ¶retag'),
+(54, 77, '11111', 'Johns', 'HJejk', 12313, 'UPPSALA', '2017-11-29', 'Bra skit');
 
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `site`
+-- Table structure for table `site`
 --
 
 CREATE TABLE `site` (
   `siteID` int(11) NOT NULL,
   `orgID` int(11) NOT NULL,
   `siteName` text NOT NULL,
-  `adress` text NOT NULL
+  `street` text NOT NULL,
+  `zipcode` int(11) NOT NULL,
+  `city` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `site`
+--
+
+INSERT INTO `site` (`siteID`, `orgID`, `siteName`, `street`, `zipcode`, `city`) VALUES
+(1, 54, 'Hej', '123', 123, '123');
 
 -- --------------------------------------------------------
 
 --
--- Tabellstruktur `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -148,7 +159,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumpning av Data i tabell `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`userID`, `admin`, `userName`, `email`, `password`, `salt`, `firstName`, `lastName`, `dateOfBirth`, `adress`, `postalCode`, `postalCity`) VALUES
@@ -160,25 +171,25 @@ INSERT INTO `user` (`userID`, `admin`, `userName`, `email`, `password`, `salt`, 
 (78, 0, 'transparent rock', 'john.f.almqvist@gmail.com', '767e67927a232baa7184dabdceaedc40ace905e0', 'fc0f9b8b11ba9eea1f8d1d', 'John', 'Almqvist', '1991-01-28', 'VÃ¤ktargatan 26A', '75422', 'UPPSALA');
 
 --
--- Index för dumpade tabeller
+-- Indexes for dumped tables
 --
 
 --
--- Index för tabell `attribute-org-site`
+-- Indexes for table `attribute-orgs-sites`
 --
-ALTER TABLE `attribute-org-site`
+ALTER TABLE `attribute-orgs-sites`
   ADD KEY `orgID` (`orgID`),
   ADD KEY `attributeID` (`attributeID`),
   ADD KEY `siteID` (`siteID`);
 
 --
--- Index för tabell `attributes`
+-- Indexes for table `attributes`
 --
 ALTER TABLE `attributes`
   ADD PRIMARY KEY (`attributeID`);
 
 --
--- Index för tabell `comment`
+-- Indexes for table `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`commentID`),
@@ -186,7 +197,7 @@ ALTER TABLE `comment`
   ADD KEY `userID` (`userID`);
 
 --
--- Index för tabell `org_profile`
+-- Indexes for table `org_profile`
 --
 ALTER TABLE `org_profile`
   ADD PRIMARY KEY (`orgID`),
@@ -194,14 +205,14 @@ ALTER TABLE `org_profile`
   ADD KEY `trailID` (`orgID`);
 
 --
--- Index för tabell `site`
+-- Indexes for table `site`
 --
 ALTER TABLE `site`
   ADD PRIMARY KEY (`siteID`),
   ADD KEY `orgID` (`orgID`);
 
 --
--- Index för tabell `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userID`),
@@ -209,53 +220,53 @@ ALTER TABLE `user`
   ADD KEY `userID` (`userID`);
 
 --
--- AUTO_INCREMENT för dumpade tabeller
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT för tabell `attributes`
+-- AUTO_INCREMENT for table `attributes`
 --
 ALTER TABLE `attributes`
   MODIFY `attributeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT för tabell `comment`
+-- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
   MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 --
--- AUTO_INCREMENT för tabell `org_profile`
+-- AUTO_INCREMENT for table `org_profile`
 --
 ALTER TABLE `org_profile`
-  MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 --
--- AUTO_INCREMENT för tabell `site`
+-- AUTO_INCREMENT for table `site`
 --
 ALTER TABLE `site`
-  MODIFY `siteID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `siteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT för tabell `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
--- Restriktioner för dumpade tabeller
+-- Constraints for dumped tables
 --
 
 --
--- Restriktioner för tabell `attribute-org-site`
+-- Constraints for table `attribute-orgs-sites`
 --
-ALTER TABLE `attribute-org-site`
-  ADD CONSTRAINT `attribute-org-site_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `attribute-org-site_ibfk_2` FOREIGN KEY (`attributeID`) REFERENCES `attributes` (`attributeID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `attribute-orgs-sites`
+  ADD CONSTRAINT `attribute-orgs-sites_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `attribute-orgs-sites_ibfk_2` FOREIGN KEY (`attributeID`) REFERENCES `attributes` (`attributeID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Restriktioner för tabell `org_profile`
+-- Constraints for table `org_profile`
 --
 ALTER TABLE `org_profile`
   ADD CONSTRAINT `org_profile_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Restriktioner för tabell `site`
+-- Constraints for table `site`
 --
 ALTER TABLE `site`
   ADD CONSTRAINT `site_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -311,6 +311,15 @@ a#admin_page:hover {
 	color: gray;
 	border-bottom:2px solid rgba(255, 227, 91,0.5);
 }
+
+a#create_new_organization{
+	margin-right: 0;
+	margin-bottom: 0px;
+}
+a#create_new_organization:hover {
+	color: gray;
+	border-bottom:2px solid rgba(255, 227, 91,0.5);
+}
 a#user_trails{
 	margin-right: 0;
 	margin-bottom: 20px;
@@ -318,10 +327,9 @@ a#user_trails{
 a#user_trails:hover {
 	color: gray;
 	border-bottom:2px solid rgba(255, 227, 91,0.5);
-	
-	
-
 }
+
+
 a#user_steg {
 	color: gray;
 	font-size: 1em;

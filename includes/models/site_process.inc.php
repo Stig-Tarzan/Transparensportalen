@@ -6,7 +6,6 @@
 
 	if (isset($_POST['org_number_value'])) 
 	{
-		echo "HEJJ!";
 		$site_name = mysqli_real_escape_string ($conn,$_POST['site_name_value']);
 		$site_street = mysqli_real_escape_string ($conn,$_POST['site_street_value']);
 		$site_zipcode = mysqli_real_escape_string ($conn,$_POST['site_zipcode_value']);

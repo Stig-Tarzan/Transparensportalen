@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2017 at 05:15 PM
+-- Generation Time: Nov 29, 2017 at 05:23 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -100,7 +100,7 @@ CREATE TABLE `org_profile` (
   `orgNumber` text NOT NULL,
   `orgName` text NOT NULL,
   `orgStreet` text NOT NULL,
-  `orgPostNumber` int(11) NOT NULL,
+  `orgPostNumber` text NOT NULL,
   `orgCity` text NOT NULL,
   `creationDate` date NOT NULL,
   `orgInfoText` text NOT NULL
@@ -111,9 +111,10 @@ CREATE TABLE `org_profile` (
 --
 
 INSERT INTO `org_profile` (`orgID`, `userID`, `orgNumber`, `orgName`, `orgStreet`, `orgPostNumber`, `orgCity`, `creationDate`, `orgInfoText`) VALUES
-(52, 77, '1231', 'Hej', 'Hej', 123, 'gsa', '2017-11-29', '123fsaasfgsagf'),
-(53, 77, '1111', 'Henkes', 'VÃ¤ktargatan', 11111, 'UPPSALA', '2017-11-29', 'Bra fÃ¶retag'),
-(54, 77, '11111', 'Johns', 'HJejk', 12313, 'UPPSALA', '2017-11-29', 'Bra skit');
+(52, 77, '1231', 'Hej', 'Hej', '123', 'gsa', '2017-11-29', '123fsaasfgsagf'),
+(53, 77, '1111', 'Henkes', 'VÃ¤ktargatan', '11111', 'UPPSALA', '2017-11-29', 'Bra fÃ¶retag'),
+(54, 77, '11111', 'Johns', 'HJejk', '12313', 'UPPSALA', '2017-11-29', 'Bra skit'),
+(55, 77, '11111', 'Henkes', 'hej', '123', '123', '2017-11-29', '123213154adsga');
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,7 @@ CREATE TABLE `site` (
   `orgID` int(11) NOT NULL,
   `siteName` text NOT NULL,
   `street` text NOT NULL,
-  `zipcode` int(11) NOT NULL,
+  `zipcode` text NOT NULL,
   `city` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -135,7 +136,9 @@ CREATE TABLE `site` (
 --
 
 INSERT INTO `site` (`siteID`, `orgID`, `siteName`, `street`, `zipcode`, `city`) VALUES
-(1, 54, 'Hej', '123', 123, '123');
+(1, 54, 'Hej', '123', '123', '123'),
+(2, 54, 'ehj', '123', '123', 'USDSGS'),
+(3, 54, 'SAGAG', '123', '123', '12421Â§512');
 
 -- --------------------------------------------------------
 
@@ -237,12 +240,12 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `org_profile`
 --
 ALTER TABLE `org_profile`
-  MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `site`
 --
 ALTER TABLE `site`
-  MODIFY `siteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `siteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `user`
 --

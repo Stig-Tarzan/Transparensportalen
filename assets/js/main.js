@@ -405,7 +405,7 @@ var poly_total;
      	var org_city_value = $('#org_city_value').val();
       	var org_creation_date_value = $('#org_creation_date').val();
      	var org_info_value = $('#org_info_value').val();
-      	var org_info_value_cleaned = trail_info_value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      	var org_info_value_cleaned = org_info_value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
    
       var data = 
       { 
@@ -441,7 +441,7 @@ var poly_total;
    
       var data = 
       { 
-        site_lsit_value: site_list 
+        site_list_value: site_list 
       }
 
       $.post('includes/models/site_process.inc.php', 

@@ -2,7 +2,7 @@
 
  -->
 <?php
-	$trail_input = "
+	$org_input = "
 			<div id='name_orgno_container'>
 			<input name='trail_name_value' id='trail_name' placeholder=' Företagsnamn'>
 			<input name='org_name_value' id='org_no' placeholder=' xxxxxx-xxxx'></div>
@@ -17,13 +17,13 @@
 			<div id='added_sites_container'></div>
 			</div>
 			
-			<input type='hidden' name='trail_creation_date_value' id='trail_creation_date' value='".date('Y-m-d H:i:s')."'> 
-			<textarea name='trail_info_value' id='trail_info' placeholder='Ange information om led' ></textarea>
-			<input type='hidden' name='trail_creation_date_value' value='value='".date('Y-m-d H:i:s')."'>
+			<input type='hidden' name='org_creation_date_value' id='org_creation_date' value='".date('Y-m-d H:i:s')."'> 
+			<textarea name='org_info_value' id='org_info_value' placeholder='Ange information om er organisation' ></textarea>
+			
 			
 				
 
 
 	";
 
-	echo $trail_input;
+	echo $org_input;

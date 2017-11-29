@@ -426,6 +426,45 @@ var poly_total;
       });
     });
 	//***************************************************
+	//*************Save site*********************
+    $('#main_section').on('click', '#save_icon',function () 
+
+    {
+      	$('#content_bot').css('display', 'none');
+      	$("#add_trail").css("display", "flex");
+      	$("#add_trail").css('bottom', '2%');
+		$('#undo_icon').css("display", "none");
+		$('#save_icon').css("display", "none");
+		document.getElementById("content_top").innerHTML = "";
+
+		var org_number_value = $('#org_number_value').val();
+		var org_name_value = $('#org_number_value').val();
+     	var org_street_value = $('#org_street_value').val();
+      	var org_postnumber_value = $('#org_postno_value').val();
+     	var org_city_value = $('#org_city_value').val();
+      	var org_creation_date_value = $('#org_creation_date').val();
+     	var org_info_value = $('#org_info_value').val();
+      	var org_info_value_cleaned = trail_info_value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+   
+      var data = 
+      { 
+        org_number_value: org_number_value, 
+        org_name_value: org_name_value, 
+        org_street_value: org_street_value,
+        org_postno_value: org_postno_value,
+        org_city_value: org_city_value,
+        org_creation_date_value: org_creation_date_value,
+        org_info_value: org_info_value_cleaned,
+      }
+
+      $.post('includes/models/org_process.inc.php', 
+        data
+        ,function(data, status)
+      {
+        alert(data);
+      });
+    });
+	//***************************************************
 
 	//*************Load trail*************************
     $('#content_top').on('click', '.trails_in_list',function () 

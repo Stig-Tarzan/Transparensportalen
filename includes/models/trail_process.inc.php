@@ -7,12 +7,13 @@
 	if (isset($_POST['trail_name_value'])) 
 	{
 		$user_name = mysqli_real_escape_string ($conn,$_SESSION['user_name']);
-		$trail_name = mysqli_real_escape_string ($conn,$_POST['trail_name_value']);
-		$trail_difficulty_level = mysqli_real_escape_string ($conn,$_POST['trail_difficulty_level_value']);
-		$trail_creation_date = mysqli_real_escape_string ($conn,$_POST['trail_creation_date_value']);
-		$trail_info = mysqli_real_escape_string ($conn,$_POST['trail_info_value']);
-		$trail_shape = mysqli_real_escape_string ($conn,$_POST['trail_shape_value']);
-		$trail_length = mysqli_real_escape_string ($conn,$_POST['trail_length_value']);
+		$org_number = mysqli_real_escape_string ($conn,$_POST['org_number_value'])
+		$org_name = mysqli_real_escape_string ($conn,$_POST['org_name_value']);
+		$org_street = mysqli_real_escape_string ($conn,$_POST['org_street_value']);
+		$org_postno = mysqli_real_escape_string ($conn,$_POST['org_postno_value']);
+		$org_city = mysqli_real_escape_string ($conn,$_POST['org_city_value']);
+		$org_creation_date = mysqli_real_escape_string ($conn,$_POST['org_creation_date_value']);
+		$org_info = mysqli_real_escape_string ($conn,$_POST['org_info_value']);
 
 		$sql = "SELECT userID FROM user WHERE userName = '$user_name'";
 		$result = mysqli_query($conn, $sql);

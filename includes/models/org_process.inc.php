@@ -4,7 +4,7 @@
 	
 
 
-	if (isset($_POST['trail_name_value'])) 
+	if (isset($_POST['org_number_value'])) 
 	{
 		$user_name = mysqli_real_escape_string ($conn,$_SESSION['user_name']);
 		$org_number = mysqli_real_escape_string ($conn,$_POST['org_number_value'])

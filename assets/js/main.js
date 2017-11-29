@@ -3,6 +3,8 @@ var mouse_is_inside_user = false;
 var register_has_loaded = false;
 var agree = false;
 var ishide= false;
+var attributes = new Object();
+var att_list = new Array();
 
 $(document).ready(function () {
 
@@ -50,7 +52,21 @@ var poly_total;
 			$("#add_trail").css("display", "flex");
 			$("#add_trail").css('bottom', '2%');
 		}
-	});		
+	});
+	//*****************TRASPARENSPORTALEN***************************
+
+	//*************add attributes***********************************
+	$('#content_bot').on('click', '#att_add_button',function () {
+		
+
+		$('<div id="att_addinfo_outer"><div id="att_addinfo_inner"></div></div>').appendTo('#body');
+		$('#main_section').css("display", "none");
+		$('#att_addinfo_inner').load('includes/views/add_site_info.php');
+		
+	});
+
+
+
 
 	//*************log out*********************************
 	$('#profile_section').on('click', '#log_out_button',function () {

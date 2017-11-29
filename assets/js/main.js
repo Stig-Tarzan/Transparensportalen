@@ -437,17 +437,31 @@ var poly_total;
 		$('#save_icon').css("display", "none");
 		document.getElementById("content_top").innerHTML = "";
    
-      var data = 
-      { 
-        site_list_value: site_list 
-      }
+		for (var i = 0; i <= site_list.length-1 ;i++)
+		{
+			var site_name = site_list[i].name;
+			var site_street = site_list[i].street;
+			var site_zipcode = site_list[i].zipcode;
+			var site_city = site_list[i].city;
 
-      $.post("includes/models/site_process.inc.php" , 
-        data
-        , function(data, status)
-      {
-        alert(data);
-      });
+			var data = 
+      		{ 
+       			site_name_value: site_name,
+        		site_street_value: site_street, 
+        		site_zipcode_value: site_zipcode, 
+        		site_city_value: site_city 
+
+      		}
+
+      		$.post("includes/models/site_process.inc.php" , 
+        		data
+        		, function(data, status)
+     		{
+        		alert(data);
+     		});
+		};
+
+
     });
 	//***************************************************
 

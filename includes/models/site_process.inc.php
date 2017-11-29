@@ -9,7 +9,7 @@
 
 		$site_list = mysqli_real_escape_string ($conn,$_POST['site_list_value']);
 		
-		echo $site_list;
+		
 		
 
 		$sql = "SELECT userID FROM user WHERE userName = '$user_name'";
@@ -24,7 +24,7 @@
 
 		if ($result) 
 		{
-			echo "Led registrerad";
+			echo "Leds registrerad";
 		}
 		else
 		{

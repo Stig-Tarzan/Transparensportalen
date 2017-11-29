@@ -514,24 +514,26 @@ var poly_total;
 	//*************filter trail*********************
 $('#filter_container').on('click', '.date_button',function () {
 
+		alert("utkommenterad funktion");
 		var trail_filter = this.id;
 		var input = $('#search_input').val();
 
-		$('#content_top').load('includes/models/filter_process.inc.php',{ filter: trail_filter, search_input: input} );
+		//$('#content_top').load('includes/models/filter_process.inc.php',{ filter: trail_filter, search_input: input} );
 	});
 $('#filter_container').on('click', '.rate_button',function () {
-
+		alert("utkommenterad funktion");
 		var trail_filter = this.id;
 		var input = $('#search_input').val();
+		
+		//$('#content_top').load('includes/models/filter_process.inc.php',{ filter: trail_filter, search_input: input} );
 
-		$('#content_top').load('includes/models/filter_process.inc.php',{ filter: trail_filter, search_input: input} );
 	});
 $('#filter_container').on('click', '.alpha_button',function () {
-
+		alert("utkommenterad funktion");
 		var trail_filter = this.id;
 		var input = $('#search_input').val();
 
-		$('#content_top').load('includes/models/filter_process.inc.php',{ filter: trail_filter, search_input: input} );
+		//$('#content_top').load('includes/models/filter_process.inc.php',{ filter: trail_filter, search_input: input} );
 	});
 
 	

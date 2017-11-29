@@ -437,27 +437,14 @@ var poly_total;
 		$('#save_icon').css("display", "none");
 		document.getElementById("content_top").innerHTML = "";
 
-		var org_number_value = $('#org_number_value').val();
-		var org_name_value = $('#org_number_value').val();
-     	var org_street_value = $('#org_street_value').val();
-      	var org_postnumber_value = $('#org_postno_value').val();
-     	var org_city_value = $('#org_city_value').val();
-      	var org_creation_date_value = $('#org_creation_date').val();
-     	var org_info_value = $('#org_info_value').val();
-      	var org_info_value_cleaned = trail_info_value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
    
       var data = 
       { 
-        org_number_value: org_number_value, 
-        org_name_value: org_name_value, 
-        org_street_value: org_street_value,
-        org_postno_value: org_postno_value,
-        org_city_value: org_city_value,
-        org_creation_date_value: org_creation_date_value,
-        org_info_value: org_info_value_cleaned,
+        site_lsit_value: site_list 
       }
 
-      $.post('includes/models/org_process.inc.php', 
+      $.post('includes/models/site_process.inc.php', 
         data
         ,function(data, status)
       {

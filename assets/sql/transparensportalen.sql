@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 29, 2017 at 05:23 PM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Värd: 127.0.0.1
+-- Tid vid skapande: 04 dec 2017 kl 14:48
+-- Serverversion: 5.7.14
+-- PHP-version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `transparensportalen`
+-- Databas: `transparensportalen`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attribute-orgs-sites`
+-- Tabellstruktur `attribute-orgs-sites`
 --
 
 CREATE TABLE `attribute-orgs-sites` (
@@ -36,37 +36,39 @@ CREATE TABLE `attribute-orgs-sites` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attributes`
+-- Tabellstruktur `attributes`
 --
 
 CREATE TABLE `attributes` (
   `attributeID` int(11) NOT NULL,
-  `griName` text NOT NULL,
-  `griNo` text NOT NULL
+  `griDesc` text NOT NULL,
+  `griNo` text NOT NULL,
+  `griKat` text NOT NULL,
+  `griName` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `attributes`
+-- Dumpning av Data i tabell `attributes`
 --
 
-INSERT INTO `attributes` (`attributeID`, `griName`, `griNo`) VALUES
-(1, 'Surface water withdrawn, including water from wetlands, rivers, lakes, and oceans', '301-1-a-i'),
-(2, 'Ground water withdrawn', '301-1-a-ii'),
-(3, 'Rainwater collected directly and stored by the organization', '301-1-a-iii'),
-(4, 'Waste water withdrawn from another organization', '301-1-a-iv'),
-(5, 'Withdrawn municipal water supplies or other public or private water utilities.', '301-1-a-v'),
-(6, 'Standards, methodologies, and assumptions used in: 301-1-a-i, 301-1-a-ii, 301-1-a-iii, 301-1-a-iv, 301-1-a-v', '301-1-b'),
-(7, 'Total volume of water recycled and reused by the organization', '303-3-a'),
-(8, 'Total volume of water recycled and reused as a percentage of the total water withdrawal\r\nas specified in Disclosure 303-1', '303-3-b'),
-(9, 'Standards, methodologies, and assumptions used in: 303-3-a, 303-3-b', '303-3-c'),
-(10, 'Geographic location (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-i'),
-(11, 'Subsurface and underground land that may be owned, leased, or managed\nby the organization (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-ii'),
-(12, 'Position in relation to the protected area (in the area, adjacent to, or containing\nportions of the protected area) or the high biodiversity value area outside\nprotected areas (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-iii');
+INSERT INTO `attributes` (`attributeID`, `griDesc`, `griNo`, `griKat`, `griName`) VALUES
+(1, 'Surface water withdrawn, including water from wetlands, rivers, lakes, and oceans', '301-1-a-i', 'environmental', 'Surface water withdrawn'),
+(2, 'Ground water withdrawn', '301-1-a-ii', 'environmental', 'Ground water withdrawn'),
+(3, 'Rainwater collected directly and stored by the organization', '301-1-a-iii', 'environmental', 'Rainwater collected'),
+(4, 'Waste water withdrawn from another organization', '301-1-a-iv', 'environmental', 'Waste water withdrawn'),
+(5, 'Withdrawn municipal water supplies or other public or private water utilities.', '301-1-a-v', 'environmental', 'Withdrawn municipal water'),
+(6, 'Standards, methodologies, and assumptions used in: 301-1-a-i, 301-1-a-ii, 301-1-a-iii, 301-1-a-iv, 301-1-a-v', '301-1-b', 'environmental', 'Water specs'),
+(7, 'Total volume of water recycled and reused by the organization', '303-3-a', 'environmental', 'Total volume of water recycled '),
+(8, 'Total volume of water recycled and reused as a percentage of the total water withdrawal\nas specified in Disclosure 303-1', '303-3-b', 'environmental', 'Precentage of water recycled'),
+(9, 'Standards, methodologies, and assumptions used in: 303-3-a, 303-3-b', '303-3-c', 'environmental', 'Water recycle specs'),
+(10, 'Geographic location (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-i', 'environmental', 'Sites in/adjecent to protected areas'),
+(11, 'Subsurface and underground land that may be owned, leased, or managed\nby the organization (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-ii', 'environmental', 'Subsurface Sites in/adjecent to protected areas'),
+(12, 'Position in relation to the protected area (in the area, adjacent to, or containing\nportions of the protected area) or the high biodiversity value area outside\nprotected areas (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-iii', 'environmental', 'Position in relation to the protected area');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Tabellstruktur `comment`
 --
 
 CREATE TABLE `comment` (
@@ -78,7 +80,7 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `comment`
+-- Dumpning av Data i tabell `comment`
 --
 
 INSERT INTO `comment` (`commentID`, `trailID`, `userID`, `content`, `date`) VALUES
@@ -91,7 +93,7 @@ INSERT INTO `comment` (`commentID`, `trailID`, `userID`, `content`, `date`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `org_profile`
+-- Tabellstruktur `org_profile`
 --
 
 CREATE TABLE `org_profile` (
@@ -107,19 +109,25 @@ CREATE TABLE `org_profile` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `org_profile`
+-- Dumpning av Data i tabell `org_profile`
 --
 
 INSERT INTO `org_profile` (`orgID`, `userID`, `orgNumber`, `orgName`, `orgStreet`, `orgPostNumber`, `orgCity`, `creationDate`, `orgInfoText`) VALUES
 (52, 77, '1231', 'Hej', 'Hej', '123', 'gsa', '2017-11-29', '123fsaasfgsagf'),
 (53, 77, '1111', 'Henkes', 'VÃ¤ktargatan', '11111', 'UPPSALA', '2017-11-29', 'Bra fÃ¶retag'),
 (54, 77, '11111', 'Johns', 'HJejk', '12313', 'UPPSALA', '2017-11-29', 'Bra skit'),
-(55, 77, '11111', 'Henkes', 'hej', '123', '123', '2017-11-29', '123213154adsga');
+(55, 77, '11111', 'Henkes', 'hej', '123', '123', '2017-11-29', '123213154adsga'),
+(56, 77, '12313311', 'hej', 'aaaaa', 'asdasd', '11111', '2017-11-29', 'asdasd'),
+(57, 77, 'asdasd', 'asdaaaaaaa', 'asdasd', 'asdasd', 'asdasd', '2017-11-29', ''),
+(58, 77, '11111', 'Hnerik ba', 'hejgatan', '15442', 'uppsala', '2017-11-29', 'asddd'),
+(59, 77, '6546512165', 'Helena AB', 'Storgatan 1', '45612', 'Uppsala', '2017-11-29', 'vi sÃ¤ljer bÃ¶cker'),
+(60, 77, '', '', '', '', '', '2017-11-29', ''),
+(61, 77, '556555-1125', 'LindaAB', 'Stogg. 123', '123 45', 'Stad', '2017-12-04', '111 abbbb');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `site`
+-- Tabellstruktur `site`
 --
 
 CREATE TABLE `site` (
@@ -132,18 +140,25 @@ CREATE TABLE `site` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `site`
+-- Dumpning av Data i tabell `site`
 --
 
 INSERT INTO `site` (`siteID`, `orgID`, `siteName`, `street`, `zipcode`, `city`) VALUES
 (1, 54, 'Hej', '123', '123', '123'),
 (2, 54, 'ehj', '123', '123', 'USDSGS'),
-(3, 54, 'SAGAG', '123', '123', '12421Â§512');
+(3, 54, 'SAGAG', '123', '123', '12421Â§512'),
+(4, 56, 'hem', 'bot', '123132', 'aaa'),
+(5, 57, 'Site1', 'asdasd', 'asdasd', 'asdasd'),
+(6, 54, 'site3', 'aaa123', 'aasda', 'aaaaaaa'),
+(7, 54, 'site56', '1112asd', 'aaad', 'ddddd'),
+(8, 60, 'asd', 'asd', 'asd', 'asd'),
+(9, 60, '', '', '', ''),
+(10, 61, 'kontoret', 'storg 1', '123 45', 'orten');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Tabellstruktur `user`
 --
 
 CREATE TABLE `user` (
@@ -162,7 +177,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumpning av Data i tabell `user`
 --
 
 INSERT INTO `user` (`userID`, `admin`, `userName`, `email`, `password`, `salt`, `firstName`, `lastName`, `dateOfBirth`, `adress`, `postalCode`, `postalCity`) VALUES
@@ -174,11 +189,11 @@ INSERT INTO `user` (`userID`, `admin`, `userName`, `email`, `password`, `salt`, 
 (78, 0, 'transparent rock', 'john.f.almqvist@gmail.com', '767e67927a232baa7184dabdceaedc40ace905e0', 'fc0f9b8b11ba9eea1f8d1d', 'John', 'Almqvist', '1991-01-28', 'VÃ¤ktargatan 26A', '75422', 'UPPSALA');
 
 --
--- Indexes for dumped tables
+-- Index för dumpade tabeller
 --
 
 --
--- Indexes for table `attribute-orgs-sites`
+-- Index för tabell `attribute-orgs-sites`
 --
 ALTER TABLE `attribute-orgs-sites`
   ADD KEY `orgID` (`orgID`),
@@ -186,13 +201,13 @@ ALTER TABLE `attribute-orgs-sites`
   ADD KEY `siteID` (`siteID`);
 
 --
--- Indexes for table `attributes`
+-- Index för tabell `attributes`
 --
 ALTER TABLE `attributes`
   ADD PRIMARY KEY (`attributeID`);
 
 --
--- Indexes for table `comment`
+-- Index för tabell `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`commentID`),
@@ -200,7 +215,7 @@ ALTER TABLE `comment`
   ADD KEY `userID` (`userID`);
 
 --
--- Indexes for table `org_profile`
+-- Index för tabell `org_profile`
 --
 ALTER TABLE `org_profile`
   ADD PRIMARY KEY (`orgID`),
@@ -208,14 +223,14 @@ ALTER TABLE `org_profile`
   ADD KEY `trailID` (`orgID`);
 
 --
--- Indexes for table `site`
+-- Index för tabell `site`
 --
 ALTER TABLE `site`
   ADD PRIMARY KEY (`siteID`),
   ADD KEY `orgID` (`orgID`);
 
 --
--- Indexes for table `user`
+-- Index för tabell `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userID`),
@@ -223,53 +238,53 @@ ALTER TABLE `user`
   ADD KEY `userID` (`userID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT för dumpade tabeller
 --
 
 --
--- AUTO_INCREMENT for table `attributes`
+-- AUTO_INCREMENT för tabell `attributes`
 --
 ALTER TABLE `attributes`
   MODIFY `attributeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT for table `comment`
+-- AUTO_INCREMENT för tabell `comment`
 --
 ALTER TABLE `comment`
   MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 --
--- AUTO_INCREMENT for table `org_profile`
+-- AUTO_INCREMENT för tabell `org_profile`
 --
 ALTER TABLE `org_profile`
-  MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 --
--- AUTO_INCREMENT for table `site`
+-- AUTO_INCREMENT för tabell `site`
 --
 ALTER TABLE `site`
-  MODIFY `siteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `siteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT för tabell `user`
 --
 ALTER TABLE `user`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
--- Constraints for dumped tables
+-- Restriktioner för dumpade tabeller
 --
 
 --
--- Constraints for table `attribute-orgs-sites`
+-- Restriktioner för tabell `attribute-orgs-sites`
 --
 ALTER TABLE `attribute-orgs-sites`
   ADD CONSTRAINT `attribute-orgs-sites_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `attribute-orgs-sites_ibfk_2` FOREIGN KEY (`attributeID`) REFERENCES `attributes` (`attributeID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `org_profile`
+-- Restriktioner för tabell `org_profile`
 --
 ALTER TABLE `org_profile`
   ADD CONSTRAINT `org_profile_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `site`
+-- Restriktioner för tabell `site`
 --
 ALTER TABLE `site`
   ADD CONSTRAINT `site_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -49,6 +49,33 @@ body
 	
 
 }
+.att_categories {
+	      color: white;
+      font-family: 'Roboto', sans-serif;
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-delay: 0.2s;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      	
+			
+	  width: 98%;
+      height: 100px;
+      line-height: 35px;
+      border-radius: 2px;
+      font-size: 2em;
+      margin-bottom: 5px;
+      margin-left: 5px;
+      padding-left: 2px;
+
+}
+#environmental {
+	background-color: #00956D;
+}
+#social {
+	background-color: #FF6B01;
+}
+#economical {
+	background-color: #732281;
+}
 .attribute_tiles {
 	float: left;
 		display: inline-block;	

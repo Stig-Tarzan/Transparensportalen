@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 04 dec 2017 kl 14:48
+-- Tid vid skapande: 04 dec 2017 kl 16:39
 -- Serverversion: 5.7.14
 -- PHP-version: 5.6.25
 
@@ -41,6 +41,8 @@ CREATE TABLE `attribute-orgs-sites` (
 
 CREATE TABLE `attributes` (
   `attributeID` int(11) NOT NULL,
+  `subCatID` int(11) NOT NULL,
+  `griCatID` int(11) NOT NULL,
   `griDesc` text NOT NULL,
   `griNo` text NOT NULL,
   `griKat` text NOT NULL,
@@ -51,19 +53,40 @@ CREATE TABLE `attributes` (
 -- Dumpning av Data i tabell `attributes`
 --
 
-INSERT INTO `attributes` (`attributeID`, `griDesc`, `griNo`, `griKat`, `griName`) VALUES
-(1, 'Surface water withdrawn, including water from wetlands, rivers, lakes, and oceans', '301-1-a-i', 'environmental', 'Surface water withdrawn'),
-(2, 'Ground water withdrawn', '301-1-a-ii', 'environmental', 'Ground water withdrawn'),
-(3, 'Rainwater collected directly and stored by the organization', '301-1-a-iii', 'environmental', 'Rainwater collected'),
-(4, 'Waste water withdrawn from another organization', '301-1-a-iv', 'environmental', 'Waste water withdrawn'),
-(5, 'Withdrawn municipal water supplies or other public or private water utilities.', '301-1-a-v', 'environmental', 'Withdrawn municipal water'),
-(6, 'Standards, methodologies, and assumptions used in: 301-1-a-i, 301-1-a-ii, 301-1-a-iii, 301-1-a-iv, 301-1-a-v', '301-1-b', 'environmental', 'Water specs'),
-(7, 'Total volume of water recycled and reused by the organization', '303-3-a', 'environmental', 'Total volume of water recycled '),
-(8, 'Total volume of water recycled and reused as a percentage of the total water withdrawal\nas specified in Disclosure 303-1', '303-3-b', 'environmental', 'Precentage of water recycled'),
-(9, 'Standards, methodologies, and assumptions used in: 303-3-a, 303-3-b', '303-3-c', 'environmental', 'Water recycle specs'),
-(10, 'Geographic location (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-i', 'environmental', 'Sites in/adjecent to protected areas'),
-(11, 'Subsurface and underground land that may be owned, leased, or managed\nby the organization (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-ii', 'environmental', 'Subsurface Sites in/adjecent to protected areas'),
-(12, 'Position in relation to the protected area (in the area, adjacent to, or containing\nportions of the protected area) or the high biodiversity value area outside\nprotected areas (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-iii', 'environmental', 'Position in relation to the protected area');
+INSERT INTO `attributes` (`attributeID`, `subCatID`, `griCatID`, `griDesc`, `griNo`, `griKat`, `griName`) VALUES
+(1, 1, 1, 'Surface water withdrawn, including water from wetlands, rivers, lakes, and oceans', '301-1-a-i', 'environmental', 'Surface water withdrawn'),
+(2, 1, 1, 'Ground water withdrawn', '301-1-a-ii', 'environmental', 'Ground water withdrawn'),
+(3, 1, 1, 'Rainwater collected directly and stored by the organization', '301-1-a-iii', 'environmental', 'Rainwater collected'),
+(4, 1, 1, 'Waste water withdrawn from another organization', '301-1-a-iv', 'environmental', 'Waste water withdrawn'),
+(5, 1, 1, 'Withdrawn municipal water supplies or other public or private water utilities.', '301-1-a-v', 'environmental', 'Withdrawn municipal water'),
+(6, 1, 1, 'Standards, methodologies, and assumptions used in: 301-1-a-i, 301-1-a-ii, 301-1-a-iii, 301-1-a-iv, 301-1-a-v', '301-1-b', 'environmental', 'Water specs'),
+(7, 1, 1, 'Total volume of water recycled and reused by the organization', '303-3-a', 'environmental', 'Total volume of water recycled '),
+(8, 1, 1, 'Total volume of water recycled and reused as a percentage of the total water withdrawal\nas specified in Disclosure 303-1', '303-3-b', 'environmental', 'Precentage of water recycled'),
+(9, 1, 1, 'Standards, methodologies, and assumptions used in: 303-3-a, 303-3-b', '303-3-c', 'environmental', 'Water recycle specs'),
+(10, 1, 1, 'Geographic location (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-i', 'environmental', 'Sites in/adjecent to protected areas'),
+(11, 1, 1, 'Subsurface and underground land that may be owned, leased, or managed\nby the organization (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-ii', 'environmental', 'Subsurface Sites in/adjecent to protected areas'),
+(12, 1, 1, 'Position in relation to the protected area (in the area, adjacent to, or containing\nportions of the protected area) or the high biodiversity value area outside\nprotected areas (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-iii', 'environmental', 'Position in relation to the protected area');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `cat`
+--
+
+CREATE TABLE `cat` (
+  `griCatID` int(11) NOT NULL,
+  `griCatName` text NOT NULL,
+  `griCatDesc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `cat`
+--
+
+INSERT INTO `cat` (`griCatID`, `griCatName`, `griCatDesc`) VALUES
+(1, 'Environmental', ''),
+(2, 'Social', ''),
+(3, 'Economic', '');
 
 -- --------------------------------------------------------
 
@@ -158,6 +181,26 @@ INSERT INTO `site` (`siteID`, `orgID`, `siteName`, `street`, `zipcode`, `city`) 
 -- --------------------------------------------------------
 
 --
+-- Tabellstruktur `sub_cat`
+--
+
+CREATE TABLE `sub_cat` (
+  `subCatID` int(11) NOT NULL,
+  `subCatName` text NOT NULL,
+  `subCatDesc` text NOT NULL,
+  `griCatID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `sub_cat`
+--
+
+INSERT INTO `sub_cat` (`subCatID`, `subCatName`, `subCatDesc`, `griCatID`) VALUES
+(1, 'water', 'Water use, water recyled', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Tabellstruktur `user`
 --
 
@@ -204,7 +247,15 @@ ALTER TABLE `attribute-orgs-sites`
 -- Index för tabell `attributes`
 --
 ALTER TABLE `attributes`
-  ADD PRIMARY KEY (`attributeID`);
+  ADD PRIMARY KEY (`attributeID`),
+  ADD KEY `subCatID` (`subCatID`),
+  ADD KEY `griCatID` (`griCatID`);
+
+--
+-- Index för tabell `cat`
+--
+ALTER TABLE `cat`
+  ADD PRIMARY KEY (`griCatID`);
 
 --
 -- Index för tabell `comment`
@@ -230,6 +281,13 @@ ALTER TABLE `site`
   ADD KEY `orgID` (`orgID`);
 
 --
+-- Index för tabell `sub_cat`
+--
+ALTER TABLE `sub_cat`
+  ADD PRIMARY KEY (`subCatID`),
+  ADD KEY `griCatID` (`griCatID`);
+
+--
 -- Index för tabell `user`
 --
 ALTER TABLE `user`
@@ -247,6 +305,11 @@ ALTER TABLE `user`
 ALTER TABLE `attributes`
   MODIFY `attributeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
+-- AUTO_INCREMENT för tabell `cat`
+--
+ALTER TABLE `cat`
+  MODIFY `griCatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT för tabell `comment`
 --
 ALTER TABLE `comment`
@@ -261,6 +324,11 @@ ALTER TABLE `org_profile`
 --
 ALTER TABLE `site`
   MODIFY `siteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT för tabell `sub_cat`
+--
+ALTER TABLE `sub_cat`
+  MODIFY `subCatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT för tabell `user`
 --
@@ -278,6 +346,13 @@ ALTER TABLE `attribute-orgs-sites`
   ADD CONSTRAINT `attribute-orgs-sites_ibfk_2` FOREIGN KEY (`attributeID`) REFERENCES `attributes` (`attributeID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Restriktioner för tabell `attributes`
+--
+ALTER TABLE `attributes`
+  ADD CONSTRAINT `attributes_ibfk_1` FOREIGN KEY (`subCatID`) REFERENCES `sub_cat` (`subCatID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `attributes_ibfk_2` FOREIGN KEY (`griCatID`) REFERENCES `cat` (`griCatID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Restriktioner för tabell `org_profile`
 --
 ALTER TABLE `org_profile`
@@ -288,6 +363,12 @@ ALTER TABLE `org_profile`
 --
 ALTER TABLE `site`
   ADD CONSTRAINT `site_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Restriktioner för tabell `sub_cat`
+--
+ALTER TABLE `sub_cat`
+  ADD CONSTRAINT `sub_cat_ibfk_1` FOREIGN KEY (`griCatID`) REFERENCES `cat` (`griCatID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

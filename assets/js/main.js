@@ -431,6 +431,30 @@ var poly_total;
 
 	//***************************************************
 
+	//*************expand cats********************************
+
+    $('#main_section').on('click', '.att_categories',function () 
+
+    {
+
+	
+   
+		var selected_att_cat = this.id;
+
+		var data = 
+  		{ 
+   			selected_att_cat: selected_att_cat
+       		
+   		}
+      	$.post("includes/views/load_sub_cat.inc.php" , 
+        	data
+        	, function(data, status)
+     	{
+        	$("#env_container").replaceWith(data);
+     	});
+
+
+    });
 
 	//*************Save organization*********************
     $('#main_section').on('click', '#save_icon',function () 

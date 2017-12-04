@@ -58,6 +58,51 @@ var poly_total;
 	});
 	//*****************TRASPARENSPORTALEN***************************
 
+
+	//*************När hem laddas körs en sökning***********************************
+
+	$(document).ready ( function(){
+
+		$.post("includes/models/session_status.inc.php",{}, function(data, status)
+			{
+
+				if(data == 'false'){
+
+					$("#add_trail").css("display", "none");
+					$("#user_section").css("display", "flex");
+			
+				}
+				else
+				{
+					$("#add_trail").css("display", "flex");
+					$("#add_trail").css('bottom', '2%');
+				}
+		});
+		
+
+		$('#content_bot').css('display', 'none');
+
+		$('#undo_icon').css("display", "none");
+		$('#save_icon').css("display", "none");
+		$('#comment_icon').css("display", "none");
+		$('#content_top2').css("display", "none");
+		$('#filter_container').css('display', 'initial');
+		
+		$('#filter_container').load('includes/views/filters.inc.php');
+
+		var input = $('#search_input').val();
+	
+
+		$('#content_top').load('includes/models/display_trail_list_process.inc.php', { search_input: input });
+
+		$('#content_bot').empty();
+		$('#content_bot_2').empty();
+		$('#content_bot_2').css("display", "none");
+	});
+
+	//***************************************************
+
+
 	//*************add attributes***********************************
 	$('#content_bot').on('click', '#att_add_button',function () {
 		$("#att_addinfo_inner").css("display", "flex");

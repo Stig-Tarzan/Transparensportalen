@@ -25,6 +25,15 @@
   echo "<label id='trail_creator_name_in_display' value='$trail_creator'>Skapad av: $trail_creator</label>"; 
   echo "<text id='trail_description' value='$trail_name'>Beskrivning: $trail_description</text>";
   echo "</div>";
+
+  $sql_att = "SELECT * FROM attributes WHERE attributeID < 13";
+  $att_result = mysqli_query($conn, $sql_att);
+  while ($row_att = $att_result->fetch_assoc())
+  {
+      $att_name = $row_att['griName'];
+      echo "<div class='attribute_tiles'>" . $row_att['griName'] . "<div id='edit_btn'></div></div>";
+  } 
+ 
   
    
 

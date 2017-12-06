@@ -26,9 +26,9 @@
   echo "<text id='trail_description' value='$trail_name'>Beskrivning: $trail_description</text>";
   echo "</div>";
 
-  echo "<div id='env_container'><div id='environmental' class='att_categories'>Environmental</div></div>";
-  echo "<div id='soc_container'><div id='social' class='att_categories'>Social</div></div>";
-  echo "<div id='eco_container'><div id='economical' class='att_categories'>Economical</div></div>";
+  echo "<div id='cat_outer_container'><div id='env_container' class='cat_container'><div id='environmental' class='att_categories'>Environmental</div></div>";
+  echo "<div id='soc_container' class='cat_container'><div id='social' class='att_categories'>Social</div></div>";
+  echo "<div id='eco_container'class='cat_container'><div id='economical' class='att_categories'>Economical</div></div></div>";
  
   
    

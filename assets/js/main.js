@@ -8,6 +8,9 @@ var att_list = new Array();
 var site = new Object();
 var site_list = new Array();
 var hasSite = 0;
+var clicked_env = 0;
+var clicked_soc = 0;
+var clicked_eco = 0;
 
 $(document).ready(function () {
 
@@ -450,11 +453,43 @@ var poly_total;
         	data
         	, function(data, status)
      	{
-        	$("#env_container").replaceWith(data);
+     		if(clicked_env === 0)
+     		{
+     			$('#sub_cat_container').css("background-color","#95dbc8");
+     			if(clicked_soc === 1 || clicked_eco === 1)
+     			{
+     				$("#sub_cat_container").replaceWith(data);
+     			}
+
+     			else 
+     			{
+     				$(data).appendTo("#cat_outer_container");
+     			}
+     			clicked_env = 1;
+     			clicked_soc = 0;
+     		}
+     		else if(clicked_soc === 0)
+     		{
+     			
+     			$('#sub_cat_container').css("background-color","#e2c0a7");
+     			if(clicked_env === 1 || clicked_eco === 1)
+     			{
+     				$("#sub_cat_container").replaceWith(data);
+     			}
+     			else 
+     			{
+     				$(data).appendTo("#cat_outer_container");
+     			}
+     			clicked_env = 0;
+     			clicked_soc = 1;
+     			
+     		}
+        	
      	});
 
 
     });
+
 
 	//*************Save organization*********************
     $('#main_section').on('click', '#save_icon',function () 

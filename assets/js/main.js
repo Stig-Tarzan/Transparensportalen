@@ -481,6 +481,7 @@ var poly_total;
      			}
      			clicked_env = 1;
      			clicked_soc = 0;
+     			clicked_eco = 0;
      		}
      		else if(selected_att_cat === 'social')
      		{
@@ -507,37 +508,39 @@ var poly_total;
      				
      			
      			}
+     			clicked_eco = 0;
      			clicked_env = 0;
      			clicked_soc = 1;
      			
      		}
-     		else if(selected_att_cat === 'social')
+     		else if(selected_att_cat === 'economical')
      		{
      			
      			
-     			if(clicked_env === 1 || clicked_eco === 1)
+     			if(clicked_env === 1 || clicked_soc === 1)
      			{
      				
      				$("#sub_cat_container").replaceWith(data);
-     				$('#sub_cat_container').css("background-color","#f4c29f");
+     				$('#sub_cat_container').css("background-color","#cd98d6");
      			}
      			else 
-     			{	$('#sub_cat_container').css("background-color","#f4c29f");
+     			{	$('#sub_cat_container').css("background-color","#cd98d6");
      				if($('#sub_cat_container').length)
     				{
     					$("#sub_cat_container").replaceWith(data);
-    					$('#sub_cat_container').css("background-color","#f4c29f");
+    					$('#sub_cat_container').css("background-color","#cd98d6");
     				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
-     					$('#sub_cat_container').css("background-color","#f4c29f");
+     					$('#sub_cat_container').css("background-color","#cd98d6");
      				}
      				
      			
      			}
      			clicked_env = 0;
-     			clicked_soc = 1;
+     			clicked_soc = 0;
+     			clicked_eco = 1;
      			
      		}
         	

@@ -3,6 +3,7 @@
 	session_start();
 
 
+
 	$search_input = mysqli_real_escape_string ($conn,$_POST['search_input']);
 	$search_input_exploded = explode(" ", $search_input);
 

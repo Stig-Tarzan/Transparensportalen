@@ -584,7 +584,7 @@ var poly_total;
         	, function(data, status)
      	{
      		$(data).appendTo("#body");
-     		alert(data);
+     		
 
 
         	

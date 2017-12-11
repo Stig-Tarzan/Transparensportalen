@@ -94,7 +94,7 @@ var poly_total;
 		
 		$('#filter_container').load('includes/views/filters.inc.php');
 
-		var input = $('#search_input').val();
+		var input = "";
 	
 
 		$('#content_top').load('includes/models/display_trail_list_process.inc.php', { search_input: input });

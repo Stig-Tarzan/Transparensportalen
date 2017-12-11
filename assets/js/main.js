@@ -570,7 +570,7 @@ var poly_total;
 	
    
 		var selected_sub_cat = $(this).text();
-
+		alert(selected_sub_cat);
 			
 		
 
@@ -583,7 +583,17 @@ var poly_total;
         	data
         	, function(data, status)
      	{
-     		$(data).appendTo("#body");
+
+     		if($('#attribute_list_container').length)
+     		{
+     			$("#attribute_list_container").replaceWith(data);
+     		}
+     		else
+     		{
+     			$(data).appendTo("#body");
+     		}
+     		
+
      		
 
 

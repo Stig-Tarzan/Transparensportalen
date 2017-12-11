@@ -41,7 +41,6 @@ date_default_timezone_set('Europe/Stockholm');
 
                 <div id='content_top'></div>
 
-
                 <div id='undo_icon'></div>
                 <div id='save_icon'></div>
                 <div id='comment_icon'></div>

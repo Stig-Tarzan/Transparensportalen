@@ -4,7 +4,16 @@ body
 	margin:0;
 }
 
+
+
 /* Transparensportalen */
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 #att_add_button {
 	background-image: url(../img/add_trail.png);
 	background-size: 100%,100%;
@@ -684,23 +693,22 @@ input#user_agree {
 /* styling for search_container and its contents*/
 
 #search_container input{
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgb(255,255,255);
 	padding: 4px;
-
 }
 
 #search_container{
-	width: 95%;
+	width: 30%;
 	position: relative;
-	padding: 22px;
-	padding-left: 10px;
+	margin-left: 250px;
 	height: 60px;
+	float: inherit;
 }
 
 #search_input {
 	border:0;
 	background-color: blue;
-	width: 87%; 
+	width: 80%; 
 	margin-top: 15px;
 	margin-bottom: 26px;
 	position: absolute;
@@ -725,7 +733,7 @@ input#user_agree {
 	background-color: rgba(244, 200, 66,1);
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
-	height: 23.5px;
+	height: 24px;
 	font-weight: bold;
 	color: white;
 	position: absolute;
@@ -734,7 +742,7 @@ input#user_agree {
 	cursor: pointer;
 	width: 120px;
 	min-width:3em;
-	right: 8.2%;
+	right: 8.5%;
 
 }
 
@@ -795,8 +803,7 @@ input#user_agree {
 .trail_img {
 	width: 70px;
 	height: 70px;
-	border-radius: 5px;
-	border: 3px solid rgb(54, 196, 182);
+	
 	padding:2px;
 	margin-right: 2px;
 }

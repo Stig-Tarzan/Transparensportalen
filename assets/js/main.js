@@ -12,6 +12,7 @@ var clicked_env = 0;
 var clicked_soc = 0;
 var clicked_eco = 0;
 
+
 $(document).ready(function () {
 
     $('#profile_section').hover(function(){ 
@@ -440,6 +441,7 @@ var poly_total;
 
     {
 
+
 	
    
 		var selected_att_cat = this.id;
@@ -453,32 +455,86 @@ var poly_total;
         	data
         	, function(data, status)
      	{
-     		if(clicked_env === 0)
+     		if(selected_att_cat === "environmental")
      		{
-     			$('#sub_cat_container').css("background-color","#95dbc8");
+     			
      			if(clicked_soc === 1 || clicked_eco === 1)
      			{
      				$("#sub_cat_container").replaceWith(data);
+     				$('#sub_cat_container').css("background-color","#a6dd9b");
      			}
 
      			else 
      			{
-     				$(data).appendTo("#cat_outer_container");
+     				if($('#sub_cat_container').length)
+    				{
+    					$("#sub_cat_container").replaceWith(data);
+    					$('#sub_cat_container').css("background-color","#a6dd9b");
+    				}
+     				else 
+     				{
+     					$(data).appendTo("#cat_outer_container");
+     					$('#sub_cat_container').css("background-color","#a6dd9b");
+     				}
+     				
+     			
      			}
      			clicked_env = 1;
      			clicked_soc = 0;
      		}
-     		else if(clicked_soc === 0)
+     		else if(selected_att_cat === 'social')
      		{
      			
-     			$('#sub_cat_container').css("background-color","#e2c0a7");
+     			
      			if(clicked_env === 1 || clicked_eco === 1)
      			{
+     				
      				$("#sub_cat_container").replaceWith(data);
+     				$('#sub_cat_container').css("background-color","#f4c29f");
      			}
      			else 
+     			{	$('#sub_cat_container').css("background-color","#f4c29f");
+     				if($('#sub_cat_container').length)
+    				{
+    					$("#sub_cat_container").replaceWith(data);
+    					$('#sub_cat_container').css("background-color","#f4c29f");
+    				}
+     				else 
+     				{
+     					$(data).appendTo("#cat_outer_container");
+     					$('#sub_cat_container').css("background-color","#f4c29f");
+     				}
+     				
+     			
+     			}
+     			clicked_env = 0;
+     			clicked_soc = 1;
+     			
+     		}
+     		else if(selected_att_cat === 'social')
+     		{
+     			
+     			
+     			if(clicked_env === 1 || clicked_eco === 1)
      			{
-     				$(data).appendTo("#cat_outer_container");
+     				
+     				$("#sub_cat_container").replaceWith(data);
+     				$('#sub_cat_container').css("background-color","#f4c29f");
+     			}
+     			else 
+     			{	$('#sub_cat_container').css("background-color","#f4c29f");
+     				if($('#sub_cat_container').length)
+    				{
+    					$("#sub_cat_container").replaceWith(data);
+    					$('#sub_cat_container').css("background-color","#f4c29f");
+    				}
+     				else 
+     				{
+     					$(data).appendTo("#cat_outer_container");
+     					$('#sub_cat_container').css("background-color","#f4c29f");
+     				}
+     				
+     			
      			}
      			clicked_env = 0;
      			clicked_soc = 1;

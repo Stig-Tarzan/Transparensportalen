@@ -558,6 +558,40 @@ var poly_total;
 
 
     });
+	//***************************************************
+
+	//*************expand cats********************************
+
+    $('#main_section').on('click', '.attribute_tiles ',function () 
+
+    {
+
+
+	
+   
+		var selected_sub_cat = $(this).text();
+
+			
+		
+
+		var data = 
+  		{ 
+   			selected_sub_cat: selected_sub_cat
+       		
+   		}
+      	$.post("includes/views/load_attributes.inc.php" , 
+        	data
+        	, function(data, status)
+     	{
+     		$(data).appendTo("#body");
+     		alert(data);
+
+
+        	
+     	});
+
+
+    });
 
 
 	//*************Save organization*********************

@@ -125,6 +125,11 @@ body
 
 
 }
+#attribute_list {
+	height: 15%;
+	width: 80%;
+	background-color: green;
+}
 
 #save_site {
 	

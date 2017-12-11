@@ -462,6 +462,7 @@ var poly_total;
      			{
      				$("#sub_cat_container").replaceWith(data);
      				$('#sub_cat_container').css("background-color","#a6dd9b");
+     				$('.attribute_tiles').css("background-color","#a6dd9b");
      			}
 
      			else 
@@ -470,11 +471,13 @@ var poly_total;
     				{
     					$("#sub_cat_container").replaceWith(data);
     					$('#sub_cat_container').css("background-color","#a6dd9b");
+    					$('.attribute_tiles').css("background-color","#a6dd9b");
     				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
      					$('#sub_cat_container').css("background-color","#a6dd9b");
+     					$('.attribute_tiles').css("background-color","#a6dd9b");
      				}
      				
      			
@@ -492,18 +495,21 @@ var poly_total;
      				
      				$("#sub_cat_container").replaceWith(data);
      				$('#sub_cat_container').css("background-color","#f4c29f");
+     				$('.attribute_tiles').css("background-color","#f4c29f");
      			}
      			else 
-     			{	$('#sub_cat_container').css("background-color","#f4c29f");
+     			{	
      				if($('#sub_cat_container').length)
     				{
     					$("#sub_cat_container").replaceWith(data);
     					$('#sub_cat_container').css("background-color","#f4c29f");
+    					$('.attribute_tiles').css("background-color","#f4c29f");
     				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
      					$('#sub_cat_container').css("background-color","#f4c29f");
+     					$('.attribute_tiles').css("background-color","#f4c29f");
      				}
      				
      			
@@ -513,7 +519,7 @@ var poly_total;
      			clicked_soc = 1;
      			
      		}
-     		else if(selected_att_cat === 'economical')
+     		else if(selected_att_cat === 'economic')
      		{
      			
      			
@@ -522,18 +528,22 @@ var poly_total;
      				
      				$("#sub_cat_container").replaceWith(data);
      				$('#sub_cat_container').css("background-color","#cd98d6");
+     				$('.attribute_tiles').css("background-color","#cd98d6");
      			}
      			else 
-     			{	$('#sub_cat_container').css("background-color","#cd98d6");
+     			{	
      				if($('#sub_cat_container').length)
     				{
     					$("#sub_cat_container").replaceWith(data);
     					$('#sub_cat_container').css("background-color","#cd98d6");
+    					$('.attribute_tiles').css("background-color","#cd98d6");
+    					
     				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
      					$('#sub_cat_container').css("background-color","#cd98d6");
+     					$('.attribute_tiles').css("background-color","#cd98d6");
      				}
      				
      			

@@ -28,7 +28,7 @@
 
   echo "<div id='cat_outer_container'><div id='env_container' class='cat_container'><div id='environmental' class='att_categories'>Environmental</div></div>";
   echo "<div id='soc_container' class='cat_container'><div id='social' class='att_categories'>Social</div></div>";
-  echo "<div id='eco_container'class='cat_container'><div id='economical' class='att_categories'>Economical</div></div></div>";
+  echo "<div id='eco_container'class='cat_container'><div id='economic' class='att_categories'>Economic</div></div></div>";
  
   
    

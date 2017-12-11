@@ -40,9 +40,6 @@ date_default_timezone_set('Europe/Stockholm');
                 <div id='add_trail'></div>
 
                 <div id='content_top'></div>
-                <div id='content_top2'></div>
-                <div id='content_bot'></div>
-                <div id='content_bot_2'></div>
                 <div id='undo_icon'></div>
                 <div id='save_icon'></div>
                 <div id='comment_icon'></div>

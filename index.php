@@ -26,14 +26,15 @@ date_default_timezone_set('Europe/Stockholm');
             <div class='banner'>
                 <a href='index.php'class='banner_obj' id='lammeltaget'><H1>LämmelTåget</H1></a>
                 <div id='user_info'></div>
+                <div id='search_container'></div>
             </div>
         </head>
 
         <body id='body'>
             <div id='main_section'>
-                <div id='search_container'>
+                
                     
-                </div>
+                
                 <div id='filter_container'></div>
 
                 <div id='add_trail'></div>

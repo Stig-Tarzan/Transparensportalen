@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 04 dec 2017 kl 16:39
+-- Tid vid skapande: 11 dec 2017 kl 15:05
 -- Serverversion: 5.7.14
 -- PHP-version: 5.6.25
 
@@ -76,17 +76,18 @@ INSERT INTO `attributes` (`attributeID`, `subCatID`, `griCatID`, `griDesc`, `gri
 CREATE TABLE `cat` (
   `griCatID` int(11) NOT NULL,
   `griCatName` text NOT NULL,
-  `griCatDesc` text NOT NULL
+  `griCatDesc` text NOT NULL,
+  `griNo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumpning av Data i tabell `cat`
 --
 
-INSERT INTO `cat` (`griCatID`, `griCatName`, `griCatDesc`) VALUES
-(1, 'Environmental', ''),
-(2, 'Social', ''),
-(3, 'Economic', '');
+INSERT INTO `cat` (`griCatID`, `griCatName`, `griCatDesc`, `griNo`) VALUES
+(1, 'Environmental', '', '300'),
+(2, 'Social', '', '400'),
+(3, 'Economic', '', '200');
 
 -- --------------------------------------------------------
 
@@ -188,15 +189,48 @@ CREATE TABLE `sub_cat` (
   `subCatID` int(11) NOT NULL,
   `subCatName` text NOT NULL,
   `subCatDesc` text NOT NULL,
-  `griCatID` int(11) NOT NULL
+  `griCatID` int(11) NOT NULL,
+  `griNo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumpning av Data i tabell `sub_cat`
 --
 
-INSERT INTO `sub_cat` (`subCatID`, `subCatName`, `subCatDesc`, `griCatID`) VALUES
-(1, 'water', 'Water use, water recyled', 1);
+INSERT INTO `sub_cat` (`subCatID`, `subCatName`, `subCatDesc`, `griCatID`, `griNo`) VALUES
+(1, 'Water', 'Water sets out reporting requirements on the topic of water. This Standard\ncan be used by an organization of any size, type, sector or geographic location that\nwants to report on its impacts related to this topic.', 1, '303'),
+(2, 'Economic Performance', 'Economic Performance sets out reporting requirements on the topic of\neconomic performance. This Standard can be used by an organization of any size, type,\nsector or geographic location that wants to report on its impacts related to this topic', 3, '201'),
+(3, 'Employment', 'Employment sets out reporting requirements on the topic of employment.\nThis Standard can be used by an organization of any size, type, sector or geographic\nlocation that wants to report on its impacts related to this topic.', 2, '401'),
+(5, 'BIODIVERSITY', 'Biodiversity sets out reporting requirements on the topic of biodiversity. This\nStandard can be used by an organization of any size, type, sector or geographic location\nthat wants to report on its impacts related to this topic.', 1, '304'),
+(6, 'Environmental Compliance', 'Environmental Compliance sets out reporting requirements on the topic\nof environmental compliance. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 1, '307'),
+(7, 'Materials', 'Materials sets out reporting requirements on the topic of materials. This\nStandard can be used by an organization of any size, type, sector or geographic location\nthat wants to report on its impacts related to this topic.', 1, '301'),
+(8, 'Energy', 'Energy sets out reporting requirements on the topic of energy. This Standard\ncan be used by an organization of any size, type, sector or geographic location that\nwants to report on its impacts related to this topic.', 1, '302'),
+(9, 'Effluents and Waste', 'Effluents and Waste sets out reporting requirements on the topic of effluents\nand waste. This Standard can be used by an organization of any size, type, sector or\ngeographic location that wants to report on its impacts related to this topic', 1, '306'),
+(10, 'Supplier Environmental Assessment', 'Supplier Environmental Assessment sets out reporting requirements on\nthe topic of supplier environmental assessment. This Standard can be used by an\norganization of any size, type, sector or geographic location that wants to report\non its impacts related to this topic.', 1, '308'),
+(11, 'Emissions', 'Emissions sets out reporting requirements on the topic of emissions.\nThis Standard can be used by an organization of any size, type, sector or geographic\nlocation that wants to report on its impacts related to this topic.', 1, '305'),
+(12, 'Market Presence', 'Market Presence sets out reporting requirements on the topic of market\npresence. This Standard can be used by an organization of any size, type, sector\nor geographic location that wants to report on its impacts related to this topic.', 3, '202 '),
+(13, 'Indirect Economic Impacts', 'Indirect Economic Impacts sets out reporting requirements on the topic of\nindirect economic impacts. This Standard can be used by an organization of any size,\ntype, sector or geographic location that wants to report on its impacts related to this\ntopic.', 3, '203'),
+(14, 'Procurement Practices', 'Procurement Practices sets out reporting requirements on the topic of\nprocurement practices. This Standard can be used by an organization of any size, type,\nsector or geographic location that wants to report on its impacts related to this topic.', 3, '204'),
+(15, 'Anti-corruption', 'Anti-corruption sets out reporting requirements on the topic of\nanti-corruption. This Standard can be used by an organization of any size, type,\nsector or geographic location that wants to report on its impacts related to this topic.', 3, '205'),
+(16, 'Anti-competitive Behavior', 'Anti-competitive Behavior sets out reporting requirements on the topic of\nanti-competitive behavior. This Standard can be used by an organization of any size,\ntype, sector or geographic location that wants to report on its impacts related to\nthis topic.', 3, '206'),
+(17, 'Labor/Management Relations', 'Labor/Management Relations sets out reporting requirements on the topic\nof labor/management relations. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 2, '402'),
+(18, 'Occupational Health', 'Occupational Health and Safety sets out reporting requirements on the topic\nof occupational health and safety. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related to\nthis topic.', 2, '403'),
+(19, 'Training and Education', 'Training and Education sets out reporting requirements on the topic of training\nand education. This Standard can be used by an organization of any size, type, sector\nor geographic location that wants to report on its impacts related to this topic.', 2, '404'),
+(20, 'Diversity and Equal Opportunity', 'Diversity and Equal Opportunity sets out reporting requirements on the topic\nof diversity and equal opportunity. This Standard can be used by an organization of\nany size, type, sector or geographic location that wants to report on its impacts\nrelated to this topic.', 2, '405'),
+(21, 'Non-discrimination', 'Non-discrimination sets out reporting requirements on the topic of nondiscrimination.\nThis Standard can be used by an organization of any size, type, sector\nor geographic location that wants to report on its impacts related to this topic.', 2, '406'),
+(22, 'Freedom of Association and Collective Bargaining', 'Freedom of Association and Collective Bargaining sets out reporting requirements\non the topic of freedom of association and collective bargaining. This Standard can be\nused by an organization of any size, type, sector or geographic location that wants\nto report on its impacts related to this topic.', 2, '407'),
+(23, 'Child Labor', 'Child Labor sets out reporting requirements on the topic of child labor.\nThis Standard can be used by an organization of any size, type, sector or geographic\nlocation that wants to report on its impacts related to this topic.', 2, '408'),
+(24, 'Forced or Compulsory Labor', 'Forced or Compulsory Labor sets out reporting requirements on the topic\nof forced or compulsory labor. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 2, '409'),
+(25, 'Security Practices', 'Security Practices sets out reporting requirements on the topic of security\npractices. This Standard can be used by an organization of any size, type, sector or\ngeographic location that wants to report on its impacts related to this topic.', 2, '410'),
+(26, 'Rights of Indigenous Peoples', 'Rights of Indigenous Peoples sets out reporting requirements on the topic\nof rights of indigenous peoples. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 2, '411'),
+(27, 'Human Rights Assessment', 'Human Rights Assessment sets out reporting requirements on the topic\nof human rights assessment. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 2, '412'),
+(28, 'Local Communities', 'Local Communities sets out reporting requirements on the topic of local\ncommunities. This Standard can be used by an organization of any size, type, sector\nor geographic location that wants to report on its impacts related to this topic.', 2, '413'),
+(29, 'Supplier Social Assessment', 'Supplier Social Assessment sets out reporting requirements on the topic\nof supplier social assessment. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 2, '414'),
+(30, 'Public Policy', 'Public Policy sets out reporting requirements on the topic of public policy.\nThis Standard can be used by an organization of any size, type, sector or geographic\nlocation that wants to report on its impacts related to this topic.', 2, '415'),
+(31, 'Customer Health and Safety', 'Customer Health and Safety sets out reporting requirements on the topic\nof customer health and safety. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 2, '416'),
+(32, 'Marketing and Labeling', 'Marketing and Labeling sets out reporting requirements on the topic of\nmarketing and labeling. This Standard can be used by an organization of any size, type,\nsector or geographic location that wants to report on its impacts related to this topic.', 2, '417'),
+(33, 'Customer Privacy', 'Customer Privacy sets out reporting requirements on the topic of customer\nprivacy. This Standard can be used by an organization of any size, type, sector or\ngeographic location that wants to report on its impacts related to this topic.', 2, '418'),
+(34, 'Socioeconomic Compliance', 'Socioeconomic Compliance sets out reporting requirements on the topic\nof socioeconomic compliance. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 2, '419');
 
 -- --------------------------------------------------------
 
@@ -328,7 +362,7 @@ ALTER TABLE `site`
 -- AUTO_INCREMENT för tabell `sub_cat`
 --
 ALTER TABLE `sub_cat`
-  MODIFY `subCatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `subCatID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT för tabell `user`
 --

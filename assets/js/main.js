@@ -230,6 +230,7 @@ var poly_total;
 
 	$('#search_container').on('click', '#search_button',function () {
 
+		$('#attribute_list_container').hide();
 		$.post("includes/models/session_status.inc.php",{}, function(data, status)
 			{
 
@@ -333,6 +334,8 @@ var poly_total;
 
 	//*************profile trails*****************************
 	$('#profile_section').on('click', '#user_trails',function () {
+		$('#attribute_list_container').hide();
+
 		$('#content_bot').css('display', 'none');
 		$("#add_trail").css("display", "flex");
 		$("#add_trail").css('bottom', '2%');

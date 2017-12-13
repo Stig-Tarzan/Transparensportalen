@@ -63,7 +63,7 @@ button:focus {
 	background-image: url(../img/edit.png);
 	background-size: 20px,20px;
 	width: 30px;
-	height: 30px;
+	height: 9.6px;
 	
 	background-position: center ;
 	background-repeat: no-repeat;
@@ -192,13 +192,16 @@ button:focus {
 
     border: 0;
     color: white;
-      
-
-
 }
 .attribute_tiles. p{
 
 	text-align:center
+}
+
+.attribute_data{
+	font-family: 'Roboto', sans-serif;
+	font-weight: lighter;
+	
 }
 
 #attribute_list {
@@ -206,6 +209,7 @@ button:focus {
 	display: flex;
 	flex-direction: column;
 	height: 3em;
+	border-bottom: 1px;
 
 	margin-top: 1%;
 	background-color: rgb(255,255,255);
@@ -265,6 +269,14 @@ button:focus {
   	
   	padding-bottom: 10px;
 }
+#attribute_list_container h1{
+		font-family: 'Roboto', sans-serif;
+	}
+
+#save_button{
+	float: right;
+	text-align: center;
+}
 
 #save_site {
 	
@@ -274,13 +286,13 @@ button:focus {
       line-height: 15px;
       border-radius: 2px;
       font-size: 0.9em;
-      background-color: #fff;
+      background-color: #30b3ff;
       color: #646464;
       font-family: 'Roboto', sans-serif;
             transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       transition-delay: 0.2s;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-      background-color:rgb(244, 200, 66);
+      
       border: 0;
       color: white;
 	position: absolute;
@@ -505,7 +517,7 @@ button:focus {
 #profile_section
 {
 	z-index: 100;
-	top: 60px;
+	top: 95px;
 	overflow-wrap: break-word;
 	display: none;
 	flex-direction: column;
@@ -582,6 +594,7 @@ a#admin_page:hover {
 a#create_new_organization{
 	margin-right: 0;
 	margin-bottom: 0px;
+	text-align: left;
 }
 a#create_new_organization:hover {
 	color: gray;
@@ -722,7 +735,7 @@ input#user_agree {
 {		
 
 	z-index: 100;
-	top: 60px;
+	top: 95px;
 	overflow-wrap: break-word;
 	display: none;
 	flex-direction: column;

@@ -74,7 +74,7 @@ button:focus {
 	margin-left: -40%;
 	left: 50%;
 	padding: 20px;
-	border: solid 300px black;
+	
 
 
 }
@@ -147,18 +147,15 @@ button:focus {
 	width: 33%;
 }
 #environmental {
-	
-	background-color: #c4c4c4;
+	background-color: #bed3bc;
 	transition: none;
 }
 #social {
-	
-	background-color: #c4c4c4;
+	background-color: #bcb2a7;
 	transition: none;
 }
 #economic {
-
-	background-color: #c4c4c4;
+	background-color: #cbbed6;
 	transition: none;
 }
 .attribute_tiles {

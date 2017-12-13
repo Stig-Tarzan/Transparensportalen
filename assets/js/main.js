@@ -463,9 +463,9 @@ var poly_total;
      			{
      				$("#sub_cat_container").replaceWith(data);
 
-	    				$('#sub_cat_container').css("background-color","#aabca7");
-	     				$('.attribute_tiles').css("background-color","#bed3bc");
-	     				$('#environmental').css("background-color","#aabca7");
+	    				$('#sub_cat_container').css("background-color","#7fc497");
+	     				$('.attribute_tiles').css("background-color","#6ec18a");
+	     				$('#environmental').css("background-color","#7fc497");
 	     				$('#environmental').css("box-shadow","none");
 
 	     				$('#social').css("box-shadow","");
@@ -474,6 +474,7 @@ var poly_total;
 	     				$('#social').css("box-shadow","");
 	     				$('#economic').css("background-color","");
 	     				$('#economic').css("box-shadow","");
+
      			}
 
      			else 
@@ -483,9 +484,9 @@ var poly_total;
     					$("#sub_cat_container").replaceWith(data);
 
     					
-	    				$('#sub_cat_container').css("background-color","#aabca7");
-	     				$('.attribute_tiles').css("background-color","#bed3bc");
-	     				$('#environmental').css("background-color","#aabca7");
+	    				$('#sub_cat_container').css("background-color","#7fc497");
+	     				$('.attribute_tiles').css("background-color","#6ec18a");
+	     				$('#environmental').css("background-color","#7fc497");
 	     				$('#environmental').css("box-shadow","none");
 
 	     				$('#social').css("box-shadow","");
@@ -494,15 +495,14 @@ var poly_total;
 	     				$('#social').css("box-shadow","");
 	     				$('#economic').css("background-color","");
 	     				$('#economic').css("box-shadow","");
-
     				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
 
-	    				$('#sub_cat_container').css("background-color","#aabca7");
-	     				$('.attribute_tiles').css("background-color","#bed3bc");
-	     				$('#environmental').css("background-color","#aabca7");
+	    				$('#sub_cat_container').css("background-color","#7fc497");
+	     				$('.attribute_tiles').css("background-color","#6ec18a");
+	     				$('#environmental').css("background-color","#7fc497");
 	     				$('#environmental').css("box-shadow","none");
 
 	     				$('#social').css("box-shadow","");
@@ -521,16 +521,17 @@ var poly_total;
      		}
      		else if(selected_att_cat === 'social')
      		{
-     			
+     		
+				
      			
      			if(clicked_env === 1 || clicked_eco === 1)
      			{
      				
      				$("#sub_cat_container").replaceWith(data);
     				
-    				$('#sub_cat_container').css("background-color","#bcb2a7");
-     				$('.attribute_tiles').css("background-color","#dbcfc3");
-     				$('#social').css("background-color","#bcb2a7");
+    				$('#sub_cat_container').css("background-color","#ff6363");
+     				$('.attribute_tiles').css("background-color","#fc5a5a");
+     				$('#social').css("background-color","#ff6363");
      				$('#social').css("box-shadow","none");
 
      				$('#environmental').css("box-shadow","");
@@ -539,6 +540,7 @@ var poly_total;
      				$('#environmental').css("box-shadow","");
      				$('#economic').css("background-color","");
      				$('#economic').css("box-shadow","");
+
      			}
      			else 
      			{	
@@ -547,9 +549,9 @@ var poly_total;
     				
     				$("#sub_cat_container").replaceWith(data);
 
-    				$('#sub_cat_container').css("background-color","#bcb2a7");
-     				$('.attribute_tiles').css("background-color","#dbcfc3");
-     				$('#social').css("background-color","#bcb2a7");
+    				$('#sub_cat_container').css("background-color","#ff6363");
+     				$('.attribute_tiles').css("background-color","#fc5a5a");
+     				$('#social').css("background-color","#ff6363");
      				$('#social').css("box-shadow","none");
 
      				$('#environmental').css("box-shadow","");
@@ -563,9 +565,9 @@ var poly_total;
      				{
      					$(data).appendTo("#cat_outer_container");
 	    				
-    				$('#sub_cat_container').css("background-color","#bcb2a7");
-     				$('.attribute_tiles').css("background-color","#dbcfc3");
-     				$('#social').css("background-color","#bcb2a7");
+    				$('#sub_cat_container').css("background-color","#ff6363");
+     				$('.attribute_tiles').css("background-color","#fc5a5a");
+     				$('#social').css("background-color","#ff6363");
      				$('#social').css("box-shadow","none");
 
      				$('#environmental').css("box-shadow","");
@@ -593,9 +595,9 @@ var poly_total;
      				
      				$("#sub_cat_container").replaceWith(data);
 
-	    				$('#sub_cat_container').css("background-color","#b0a5ba");
-	     				$('.attribute_tiles').css("background-color","#cbbed6");
-	     				$('#economic').css("background-color","#b0a5ba");
+	    				$('#sub_cat_container').css("background-color","#4db4f9");
+	     				$('.attribute_tiles').css("background-color","#45b0f7");
+	     				$('#economic').css("background-color","#4db4f9");
 	     				$('#economic').css("box-shadow","none");
 
 	     				$('#social').css("box-shadow","");
@@ -606,6 +608,7 @@ var poly_total;
 	     				$('#social').css("box-shadow","");
 
 
+
      			}
      			else 
      			{	
@@ -613,9 +616,9 @@ var poly_total;
     				{
     					$("#sub_cat_container").replaceWith(data);
 
-	    				$('#sub_cat_container').css("background-color","#b0a5ba");
-	     				$('.attribute_tiles').css("background-color","#cbbed6");
-	     				$('#economic').css("background-color","#b0a5ba");
+	    				$('#sub_cat_container').css("background-color","#4db4f9");
+	     				$('.attribute_tiles').css("background-color","#45b0f7");
+	     				$('#economic').css("background-color","#4db4f9");
 	     				$('#economic').css("box-shadow","none");
 
 	     				$('#social').css("box-shadow","");
@@ -630,9 +633,9 @@ var poly_total;
      				{
      					$(data).appendTo("#cat_outer_container");
 
-	    				$('#sub_cat_container').css("background-color","#b0a5ba");
-	     				$('.attribute_tiles').css("background-color","#cbbed6");
-	     				$('#economic').css("background-color","#b0a5ba");
+	    				$('#sub_cat_container').css("background-color","#4db4f9");
+	     				$('.attribute_tiles').css("background-color","#45b0f7");
+	     				$('#economic').css("background-color","#4db4f9");
 	     				$('#economic').css("box-shadow","none");
 
 	     				$('#social').css("box-shadow","");
@@ -641,6 +644,7 @@ var poly_total;
 	     				$('#environmental').css("box-shadow","");
 	     				$('#social').css("background-color","");
 	     				$('#social').css("box-shadow","");
+
      				}
      				
      			

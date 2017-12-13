@@ -462,11 +462,14 @@ var poly_total;
      			if(clicked_soc === 1 || clicked_eco === 1)
      			{
      				$("#sub_cat_container").replaceWith(data);
-     				$('#sub_cat_container').css("background-color","#5ca354");
-     				$('.attribute_tiles').css("background-color","#79ce6f");
-     				$('#environmental').css("background-color","#5ca354");
-     				$('#environmental').css("box-shadow","none");
-     				$('#environmental').css("transition","none");
+
+	    				$('#sub_cat_container').css("background-color","#aabca7");
+	     				$('.attribute_tiles').css("background-color","#bed3bc");
+	     				$('#environmental').css("background-color","#aabca7");
+	     				$('#environmental').css("box-shadow","none");
+
+	     				$('#social').css("box-shadow","");
+	     				$('#economic').css("box-shadow","");
      			}
 
      			else 
@@ -474,21 +477,28 @@ var poly_total;
      				if($('#sub_cat_container').length)
     				{
     					$("#sub_cat_container").replaceWith(data);
-    					$('.attribute_tiles').css("background-color","#a6dd9b");
-    					$('#sub_cat_container').css("background-color","#5ca354");
-    					$('.attribute_tiles').css("background-color","#79ce6f");
-    					$('#environmental').css("background-color","#5ca354");
-    					$('#environmental').css("box-shadow","none");
-    					$('#environmental').css("transition","none");
+
+    					
+	    				$('#sub_cat_container').css("background-color","#aabca7");
+	     				$('.attribute_tiles').css("background-color","#bed3bc");
+	     				$('#environmental').css("background-color","#aabca7");
+	     				$('#environmental').css("box-shadow","none");
+
+	     				$('#social').css("box-shadow","");
+	     				$('#economic').css("box-shadow","");
+
     				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
-     					$('#sub_cat_container').css("background-color","#5ca354");
-     					$('.attribute_tiles').css("background-color","#79ce6f");
-     					$('#environmental').css("background-color","#5ca354");
-     					$('#environmental').css("box-shadow","none");
-     					$('#environmental').css("transition","none");
+
+	    				$('#sub_cat_container').css("background-color","#aabca7");
+	     				$('.attribute_tiles').css("background-color","#bed3bc");
+	     				$('#environmental').css("background-color","#aabca7");
+	     				$('#environmental').css("box-shadow","none");
+
+	     				$('#social').css("box-shadow","");
+	     				$('#economic').css("box-shadow","");
      				}
      				
      			
@@ -505,22 +515,43 @@ var poly_total;
      			{
      				
      				$("#sub_cat_container").replaceWith(data);
-     				$('#sub_cat_container').css("background-color","#f4c29f");
-     				$('.attribute_tiles').css("background-color","#f4c29f");
+    				
+    				$('#sub_cat_container').css("background-color","#bcb2a7");
+     				$('.attribute_tiles').css("background-color","#dbcfc3");
+     				$('#social').css("background-color","#bcb2a7");
+     				$('#social').css("box-shadow","none");
+
+     				$('#environmental').css("box-shadow","");
+     				$('#economic').css("box-shadow","");
      			}
      			else 
      			{	
      				if($('#sub_cat_container').length)
     				{
-    					$("#sub_cat_container").replaceWith(data);
-    					$('#sub_cat_container').css("background-color","#f4c29f");
-    					$('.attribute_tiles').css("background-color","#f4c29f");
-    				}
+    				
+    				$("#sub_cat_container").replaceWith(data);
+    				$('#sub_cat_container').css("background-color","#bcb2a7");
+     				$('.attribute_tiles').css("background-color","#dbcfc3");
+     				$('#social').css("background-color","#bcb2a7");
+     				$('#social').css("box-shadow","none");
+
+     				$('#environmental').css("box-shadow","");
+     				$('#economic').css("box-shadow","");
+ 				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
-     					$('#sub_cat_container').css("background-color","#f4c29f");
-     					$('.attribute_tiles').css("background-color","#f4c29f");
+	    				
+	    				$('#sub_cat_container').css("background-color","#bcb2a7");
+	    				
+	    				$('#sub_cat_container').css("background-color","#bcb2a7");
+	     				$('.attribute_tiles').css("background-color","#dbcfc3");
+	     				$('#social').css("background-color","#bcb2a7");
+	     				$('#social').css("box-shadow","none");
+
+	     				$('#environmental').css("box-shadow","");
+	     				$('#economic').css("box-shadow","");
+
      				}
      				
      			
@@ -538,23 +569,41 @@ var poly_total;
      			{
      				
      				$("#sub_cat_container").replaceWith(data);
-     				$('#sub_cat_container').css("background-color","#cd98d6");
-     				$('.attribute_tiles').css("background-color","#cd98d6");
+
+	    				$('#sub_cat_container').css("background-color","#b0a5ba");
+	     				$('.attribute_tiles').css("background-color","#cbbed6");
+	     				$('#economic').css("background-color","#b0a5ba");
+	     				$('#economic').css("box-shadow","none");
+
+	     				$('#social').css("box-shadow","");
+	     				$('#environmental').css("box-shadow","");
      			}
      			else 
      			{	
      				if($('#sub_cat_container').length)
     				{
     					$("#sub_cat_container").replaceWith(data);
-    					$('#sub_cat_container').css("background-color","#cd98d6");
-    					$('.attribute_tiles').css("background-color","#cd98d6");
+
+	    				$('#sub_cat_container').css("background-color","#b0a5ba");
+	     				$('.attribute_tiles').css("background-color","#cbbed6");
+	     				$('#economic').css("background-color","#b0a5ba");
+	     				$('#economic').css("box-shadow","none");
+
+	     				$('#social').css("box-shadow","");
+	     				$('#environmental').css("box-shadow","");
     					
     				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
-     					$('#sub_cat_container').css("background-color","#cd98d6");
-     					$('.attribute_tiles').css("background-color","#cd98d6");
+
+	    				$('#sub_cat_container').css("background-color","#b0a5ba");
+	     				$('.attribute_tiles').css("background-color","#cbbed6");
+	     				$('#economic').css("background-color","#b0a5ba");
+	     				$('#economic').css("box-shadow","none");
+
+	     				$('#social').css("box-shadow","");
+	     				$('#environmental').css("box-shadow","");
      				}
      				
      			

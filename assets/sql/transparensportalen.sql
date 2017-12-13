@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 13 dec 2017 kl 15:05
+-- Tid vid skapande: 13 dec 2017 kl 22:10
 -- Serverversion: 5.7.14
 -- PHP-version: 5.6.25
 
@@ -46,10 +46,8 @@ INSERT INTO `attributes` (`attributeID`, `subCatID`, `griCatID`, `griDesc`, `gri
 (3, 1, 1, 'Rainwater collected directly and stored by the organization', '301-1-a-iii', 'environmental', 'Rainwater collected'),
 (4, 1, 1, 'Waste water withdrawn from another organization', '301-1-a-iv', 'environmental', 'Waste water withdrawn'),
 (5, 1, 1, 'Withdrawn municipal water supplies or other public or private water utilities.', '301-1-a-v', 'environmental', 'Withdrawn municipal water'),
-(6, 1, 1, 'Standards, methodologies, and assumptions used in: 301-1-a-i, 301-1-a-ii, 301-1-a-iii, 301-1-a-iv, 301-1-a-v', '301-1-b', 'environmental', 'Water specs'),
 (7, 1, 1, 'Total volume of water recycled and reused by the organization', '303-3-a', 'environmental', 'Total volume of water recycled '),
 (8, 1, 1, 'Total volume of water recycled and reused as a percentage of the total water withdrawal\nas specified in Disclosure 303-1', '303-3-b', 'environmental', 'Precentage of water recycled'),
-(9, 1, 1, 'Standards, methodologies, and assumptions used in: 303-3-a, 303-3-b', '303-3-c', 'environmental', 'Water recycle specs'),
 (10, 1, 1, 'Geographic location (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-i', 'environmental', 'Sites in/adjecent to protected areas'),
 (11, 1, 1, 'Subsurface and underground land that may be owned, leased, or managed\nby the organization (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-ii', 'environmental', 'Subsurface Sites in/adjecent to protected areas'),
 (12, 1, 1, 'Position in relation to the protected area (in the area, adjacent to, or containing\nportions of the protected area) or the high biodiversity value area outside\nprotected areas (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-iii', 'environmental', 'Position in relation to the protected area');
@@ -66,8 +64,34 @@ CREATE TABLE `attribute_orgs_sites` (
   `siteID` int(11) NOT NULL,
   `attributeData` text NOT NULL,
   `griCatID` int(11) NOT NULL,
-  `subCatID` int(11) NOT NULL
+  `subCatID` int(11) NOT NULL,
+  `source` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `attribute_orgs_sites`
+--
+
+INSERT INTO `attribute_orgs_sites` (`orgID`, `attributeID`, `siteID`, `attributeData`, `griCatID`, `subCatID`, `source`) VALUES
+(63, 1, 1, '250 Liter', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(63, 2, 1, '652 Liter', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(63, 3, 1, '345 Liter', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(63, 4, 1, '25 Liter', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(66, 1, 1, '956 000 LIter', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(66, 2, 1, '679 000 Liter', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(66, 3, 1, '2560 LIter', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(66, 4, 1, '253 000 Liter', 1, 1, 'HÃ¥llbarhetsrapporten 2016'),
+(65, 10, 1, 'Main site', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(65, 12, 1, 'Main site is adjacent to Natural reserve', 1, 1, ''),
+(65, 1, 1, '265 000 LIter', 1, 1, 'HÃ¥llbarhetsrapporten 2016'),
+(65, 2, 1, '2450 Liter', 1, 1, 'Uppsala Vattens utrÃ¤kningar 2016'),
+(65, 3, 1, 'None', 1, 1, ''),
+(65, 4, 1, 'None', 1, 1, 'HÃ¥llbarhetsrapporten 2014'),
+(65, 5, 1, '301 022 Liter', 1, 1, 'HÃ¥llbarhetsrapporten 2017'),
+(65, 7, 1, '2500 Liter', 1, 1, 'HÃ¥llbarhetsrapporten'),
+(65, 8, 1, '5%', 1, 1, 'HÃ¥llbarhetsrapporten 2016'),
+(69, 7, 1, '25 Liter', 1, 1, 'Uppsala Vatten AB rapport 2017'),
+(69, 8, 1, '10%', 1, 1, 'Uppsala Vatten AB ');
 
 -- --------------------------------------------------------
 
@@ -139,16 +163,11 @@ CREATE TABLE `org_profile` (
 --
 
 INSERT INTO `org_profile` (`orgID`, `userID`, `orgNumber`, `orgName`, `orgStreet`, `orgPostNumber`, `orgCity`, `creationDate`, `orgInfoText`) VALUES
-(52, 77, '1231', 'Hej', 'Hej', '123', 'gsa', '2017-11-29', '123fsaasfgsagf'),
-(53, 77, '1111', 'Henkes', 'VÃ¤ktargatan', '11111', 'UPPSALA', '2017-11-29', 'Bra fÃ¶retag'),
-(54, 77, '11111', 'Johns', 'HJejk', '12313', 'UPPSALA', '2017-11-29', 'Bra skit'),
-(55, 77, '11111', 'Henkes', 'hej', '123', '123', '2017-11-29', '123213154adsga'),
-(56, 77, '12313311', 'hej', 'aaaaa', 'asdasd', '11111', '2017-11-29', 'asdasd'),
-(57, 77, 'asdasd', 'asdaaaaaaa', 'asdasd', 'asdasd', 'asdasd', '2017-11-29', ''),
-(58, 77, '11111', 'Hnerik ba', 'hejgatan', '15442', 'uppsala', '2017-11-29', 'asddd'),
-(59, 77, '6546512165', 'Helena AB', 'Storgatan 1', '45612', 'Uppsala', '2017-11-29', 'vi sÃ¤ljer bÃ¶cker'),
-(60, 77, '', '', '', '', '', '2017-11-29', ''),
-(61, 77, '556555-1125', 'LindaAB', 'Stogg. 123', '123 45', 'Stad', '2017-12-04', '111 abbbb');
+(63, 79, '545412-22', 'IKEA AB', 'Kungsgatan 1', '144 22', 'STOCKHOLM', '2017-12-13', 'Tillverkar mÃ¶bler och inredning som kunden sjÃ¤lv monterar. '),
+(65, 80, '754545-22', 'Norrlands Nation', 'VÃ¤ktargatan 26A', '754 22', 'UPPSALA', '2017-12-13', 'Nationsverksamhet: pub, cafÃ©, restaurang och tillhandahÃ¥llande av studieutrymme.'),
+(66, 81, '75454-2', 'Willys AB', 'Kungsgatan 23', '154 22', 'STOCKHOLM', '2017-12-13', 'Dagligvaruhandel.'),
+(68, 82, '45448-22', 'ICA', 'Kungsgatan 12', '122 22', 'STOCKHOLM', '2017-12-13', 'Dagligvaruhandel, bankverksamhet och fÃ¶rsÃ¤kringsverksamhet.'),
+(69, 83, '5487211-21', 'Myrorna', 'KungsÃ¤ngsgatan 12', '754 22', 'UPPSALA', '2017-12-13', 'Second Hand. FÃ¶rsÃ¤ljning av klÃ¤der, inredning och Ã¶vrigt.');
 
 -- --------------------------------------------------------
 
@@ -164,22 +183,6 @@ CREATE TABLE `site` (
   `zipcode` text NOT NULL,
   `city` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumpning av Data i tabell `site`
---
-
-INSERT INTO `site` (`siteID`, `orgID`, `siteName`, `street`, `zipcode`, `city`) VALUES
-(1, 54, 'Hej', '123', '123', '123'),
-(2, 54, 'ehj', '123', '123', 'USDSGS'),
-(3, 54, 'SAGAG', '123', '123', '12421Â§512'),
-(4, 56, 'hem', 'bot', '123132', 'aaa'),
-(5, 57, 'Site1', 'asdasd', 'asdasd', 'asdasd'),
-(6, 54, 'site3', 'aaa123', 'aasda', 'aaaaaaa'),
-(7, 54, 'site56', '1112asd', 'aaad', 'ddddd'),
-(8, 60, 'asd', 'asd', 'asd', 'asd'),
-(9, 60, '', '', '', ''),
-(10, 61, 'kontoret', 'storg 1', '123 45', 'orten');
 
 -- --------------------------------------------------------
 
@@ -265,7 +268,12 @@ INSERT INTO `user` (`userID`, `admin`, `userName`, `email`, `password`, `salt`, 
 (63, 0, 'Hanky', 'hank@gmail.se', '21db5d60ddc66919711035e197867513176617e2', 'a15c8eee9f0fc3bc818be2', '0', 'henkeland@gmail.se', '1991-01-28', 'VÃ¤ktargatan 25', '75422', 'Uppsala'),
 (76, 0, 'henk', 'henk@gag.se', '3e3796873726f456713d2268c9661c1f9984939e', '12864b4a55ae90afdf9401', 'ralf', 'raffe', '2015-11-01', 'asd 1', '85212', 'uppsala'),
 (77, 1, 'admin', 'asdasd@asds.se', 'c8f3d8f139d56d11dd489807babef8b721196fcb', '0cde2d058064f2a9853a9c', 'admin', 'admin', '2015-11-11', 'asd 1', '85252', 'uppsala'),
-(78, 0, 'transparent rock', 'john.f.almqvist@gmail.com', '767e67927a232baa7184dabdceaedc40ace905e0', 'fc0f9b8b11ba9eea1f8d1d', 'John', 'Almqvist', '1991-01-28', 'VÃ¤ktargatan 26A', '75422', 'UPPSALA');
+(78, 0, 'transparent rock', 'john.f.almqvist@gmail.com', '767e67927a232baa7184dabdceaedc40ace905e0', 'fc0f9b8b11ba9eea1f8d1d', 'John', 'Almqvist', '1991-01-28', 'VÃ¤ktargatan 26A', '75422', 'UPPSALA'),
+(79, 0, 'IKEA', 'jan@IKEA.se', '7d46e7190f7422b6c71e65f82aa142138b95b8a6', '4946a6f9ac051ef00ff83a', 'Jan', 'Emanuel', '1991-01-01', 'VÃ¤ktargatan 26', '75422', 'UPPSALA'),
+(80, 0, 'Norrlands', 'hej@gmail.com', '28f190e5f3a43b9b30fe0560ccaec8b862368fa4', '400d8d40c4d87b5cb653b8', 'Henke', 'Andersson', '1991-01-01', 'VÃ¤ktargatan 26', '75422', 'UPPSALA'),
+(81, 0, 'Willys', 'willys@gmail.com', '360127a7bb8dc7aaef241a2665114037cfd8bc91', 'd775c50a44c0668fbc56d3', 'Erik', 'Stortorsk', '1991-01-01', 'VÃ¤ktargatan 26', '75422', 'UPPSALA'),
+(82, 0, 'ICA', 'ica-stig@gmail.com', '12572c175a7e6b141551515dc7652116db6f544b', 'b625d39e66378a3a83480f', 'Stig', 'Eriksson', '1991-01-11', 'VÃ¤ktargatan 26A', '75422', 'UPPSALA'),
+(83, 0, 'Myrorna', 'myrorna@gmail.com', '45f0b2fdb7a1edf5d8b9a700f3e8c825c64bb300', 'cc9d7bb6706c528776f587', 'Janne', 'Eriksson', '1991-11-11', 'VÃ¤ktargatan 26A', '75422', 'UPPSALA');
 
 --
 -- Index för dumpade tabeller
@@ -356,7 +364,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT för tabell `org_profile`
 --
 ALTER TABLE `org_profile`
-  MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 --
 -- AUTO_INCREMENT för tabell `site`
 --
@@ -371,7 +379,7 @@ ALTER TABLE `sub_cat`
 -- AUTO_INCREMENT för tabell `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 --
 -- Restriktioner för dumpade tabeller
 --

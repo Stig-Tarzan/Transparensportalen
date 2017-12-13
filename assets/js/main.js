@@ -440,7 +440,7 @@ var poly_total;
     $('#main_section').on('click', '.att_categories',function () 
 
     {
-    	$('#attribute_list_container').css('display', 'none');
+    	$('#attribute_list_container').hide();
 
 
 	
@@ -566,7 +566,7 @@ var poly_total;
     $('#main_section').on('click', '.attribute_tiles ',function () 
 
     {
-    	$('#attribute_list_container').css('display', 'flex');
+    	$('#attribute_list_container').show();
 
 
 	

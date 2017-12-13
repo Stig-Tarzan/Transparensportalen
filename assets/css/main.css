@@ -161,7 +161,7 @@ button:focus {
 #attribute_list_container {
 
 
-  		display: flex;
+  	display: flex;
 	flex-direction: column;
 	position: relative;
 	

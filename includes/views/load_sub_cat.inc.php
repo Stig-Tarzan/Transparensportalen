@@ -18,7 +18,11 @@
 		    $att_name = $row_att['subCatName'];
 		    echo "<div class='attribute_tiles'>" . $row_att['subCatName'] . "</div>";
 		} 
-		echo "<div id='edit_btn'></div></div>";
+		if (isset($_SESSION['user_id'])) 
+
+			echo "</div>";
+		
+		
 	}
 
 	  

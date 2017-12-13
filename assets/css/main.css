@@ -147,15 +147,18 @@ button:focus {
 	width: 33%;
 }
 #environmental {
-	background-color: #bed3bc;
+	
+	background-color: #c4c4c4;
 	transition: none;
 }
 #social {
-	background-color: #bcb2a7;
+	
+	background-color: #c4c4c4;
 	transition: none;
 }
 #economic {
-	background-color: #cbbed6;
+
+	background-color: #c4c4c4;
 	transition: none;
 }
 .attribute_tiles {

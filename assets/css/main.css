@@ -120,7 +120,6 @@ button:focus {
 	padding-left: 2px;
     margin: 1%;
       
-      border-radius: 2px;
       font-size: 0.9em;
       background-color: #3ed1a9;
       
@@ -164,6 +163,13 @@ button:focus {
 	margin-left: -35%;
 	left: 50%;
 	margin-top: 650px;
+
+  	display: flex;
+	flex-direction: column;
+	position: relative;
+	
+	margin: 0 auto;
+	
 	background-color: rgb(255,255,255);
 	width: 70%;
   	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);

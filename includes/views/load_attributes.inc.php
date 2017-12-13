@@ -7,7 +7,7 @@
 	
   $sql_att = "SELECT * FROM attributes,sub_cat WHERE subCatName = '$selected_sub_cat' AND sub_cat.griCatID = attributes.griCatID";
   $att_result = mysqli_query($conn, $sql_att);
-  echo "<div id='attribute_list_container'>";
+  echo "<div id='attribute_list_container'><div id='sub_cat_title'><h1>".$selected_sub_cat."</h1></div>";
   if (isset($_SESSION['user_id']))
   {
       while ($row_att = $att_result->fetch_assoc())

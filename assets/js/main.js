@@ -124,6 +124,41 @@ var poly_total;
 
 		
 	});
+	//***************************************************
+
+
+	//*************edit attributes***********************************
+	$('#body').on('click', '#edit_btn',function () {
+		
+
+
+		var selected_att = $(this).parent().text();
+		
+			alert(selected_att);
+		
+
+		var data = 
+  		{ 
+   			selected_att: selected_att
+       		
+   		}
+      	$.post("includes/views/edit_attribute_info.inc.php" , 
+        	data
+        	, function(data, status)
+     	{
+
+
+     			$(data).appendTo("#body");     		
+
+     		
+
+
+        	
+     	});
+		
+
+		
+	});
 	//*************add attributes***********************************
 	$('#content_bot').on('click', '#save_site',function () {
 		
@@ -631,7 +666,7 @@ var poly_total;
 	
    
 		var selected_sub_cat = $(this).text();
-		alert(selected_sub_cat);
+		
 			
 		
 

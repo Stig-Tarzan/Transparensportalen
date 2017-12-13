@@ -2,6 +2,7 @@ body
 {
 	background-color: rgb(240,240,240);
 	margin:0;
+	position: relative;
 
 }
 
@@ -47,16 +48,54 @@ button:focus {
 #edit_btn {
 	background-image: url(../img/edit.png);
 	background-size: 20px,20px;
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
 	
-	
+	background-position: center ;
 	background-repeat: no-repeat;
+	border-radius: 30px;
+
+	position: relative;
+	margin-left: 92%;
+	background-color: lightgray; 
 	
 
-	position: absolute;
-	right: 0;
-	top: 80%;
+
+	
+	
+
+}
+#edit_att {
+	height: 40%;
+	width: 80%;
+	position: fixed;
+	background-color: white;
+	top: 200px;
+	margin-left: -40%;
+	left: 50%;
+	padding: 20px;
+	border: solid 300px black;
+
+
+}
+#edit_btn:hover {
+	background-image: url(../img/edit.png);
+	background-size: 20px,20px;
+	width: 30px;
+	height: 30px;
+	
+	background-position: center ;
+	background-repeat: no-repeat;
+	border-radius: 30px;
+
+	position: relative;
+	margin-left: 92%;
+	background-color: lightgray; 
+	cursor: pointer;
+	      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      
 
 
 	
@@ -147,11 +186,11 @@ button:focus {
 
 	display: flex;
 	flex-direction: column;
-	height: 2em;
+	height: 3em;
 
 	margin-top: 1%;
 	background-color: rgb(255,255,255);
-	width: 90%;
+	width: 100%;
 
 	font-weight: bolder;
 	font-family: 'Roboto', sans-serif;
@@ -159,19 +198,20 @@ button:focus {
       transition-delay: 0.2s;
   	
   	min-width: 350px;
-	margin:  0 auto;
+	margin:  0 
   	border-bottom: 1px solid rgba(0,0,0,0.1);
-  	padding-bottom: 10px;
+  	padding-bottom: 15px;
+  	
 }
 #attribute_list:hover {
 
 	display: flex;
 	flex-direction: column;
-	height: 2em;
+	height: 3em;
 
 	margin-top: 1%;
 	background-color: rgb(240,240,240);
-	width: 90%;
+	width: 100%;
 
 	font-weight: bolder;
 	font-family: 'Roboto', sans-serif;
@@ -179,13 +219,13 @@ button:focus {
       transition-delay: 0.2s;
   	
   	min-width: 350px;
-	margin:  0 auto;
+	margin:  0 
   	border-bottom: 1px solid rgba(0,0,0,0.1);
-  	padding-bottom: 10px;
+  	padding-bottom: 15px;
 }
 #attribute_list_container {
 
-	padding-top: 10px;
+	padding: 10px;
 
 
 	margin-top: 650px;

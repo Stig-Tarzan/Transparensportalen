@@ -466,6 +466,7 @@ var poly_total;
      				$('.attribute_tiles').css("background-color","#79ce6f");
      				$('#environmental').css("background-color","#5ca354");
      				$('#environmental').css("box-shadow","none");
+     				$('#environmental').css("transition","none");
      			}
 
      			else 
@@ -477,6 +478,7 @@ var poly_total;
     					$('.attribute_tiles').css("background-color","#79ce6f");
     					$('#environmental').css("background-color","#5ca354");
     					$('#environmental').css("box-shadow","none");
+    					$('#environmental').css("transition","none");
     				}
      				else 
      				{
@@ -485,6 +487,7 @@ var poly_total;
      					$('.attribute_tiles').css("background-color","#79ce6f");
      					$('#environmental').css("background-color","#5ca354");
      					$('#environmental').css("box-shadow","none");
+     					$('#environmental').css("transition","none");
      				}
      				
      			

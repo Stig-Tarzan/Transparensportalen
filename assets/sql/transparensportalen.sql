@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 11 dec 2017 kl 15:05
+-- Tid vid skapande: 13 dec 2017 kl 15:05
 -- Serverversion: 5.7.14
 -- PHP-version: 5.6.25
 
@@ -19,19 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Databas: `transparensportalen`
 --
-
--- --------------------------------------------------------
-
---
--- Tabellstruktur `attribute-orgs-sites`
---
-
-CREATE TABLE `attribute-orgs-sites` (
-  `orgID` int(11) NOT NULL,
-  `attributeID` int(11) NOT NULL,
-  `siteID` int(11) NOT NULL,
-  `attributeData` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -66,6 +53,21 @@ INSERT INTO `attributes` (`attributeID`, `subCatID`, `griCatID`, `griDesc`, `gri
 (10, 1, 1, 'Geographic location (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-i', 'environmental', 'Sites in/adjecent to protected areas'),
 (11, 1, 1, 'Subsurface and underground land that may be owned, leased, or managed\nby the organization (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-ii', 'environmental', 'Subsurface Sites in/adjecent to protected areas'),
 (12, 1, 1, 'Position in relation to the protected area (in the area, adjacent to, or containing\nportions of the protected area) or the high biodiversity value area outside\nprotected areas (For each operational site owned, leased, managed in, or adjacent to, protected areas and\nareas of high biodiversity value outside protected areas, the following information)', '304-1-a-iii', 'environmental', 'Position in relation to the protected area');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `attribute_orgs_sites`
+--
+
+CREATE TABLE `attribute_orgs_sites` (
+  `orgID` int(11) NOT NULL,
+  `attributeID` int(11) NOT NULL,
+  `siteID` int(11) NOT NULL,
+  `attributeData` text NOT NULL,
+  `griCatID` int(11) NOT NULL,
+  `subCatID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -201,7 +203,7 @@ INSERT INTO `sub_cat` (`subCatID`, `subCatName`, `subCatDesc`, `griCatID`, `griN
 (1, 'Water', 'Water sets out reporting requirements on the topic of water. This Standard\ncan be used by an organization of any size, type, sector or geographic location that\nwants to report on its impacts related to this topic.', 1, '303'),
 (2, 'Economic Performance', 'Economic Performance sets out reporting requirements on the topic of\neconomic performance. This Standard can be used by an organization of any size, type,\nsector or geographic location that wants to report on its impacts related to this topic', 3, '201'),
 (3, 'Employment', 'Employment sets out reporting requirements on the topic of employment.\nThis Standard can be used by an organization of any size, type, sector or geographic\nlocation that wants to report on its impacts related to this topic.', 2, '401'),
-(5, 'BIODIVERSITY', 'Biodiversity sets out reporting requirements on the topic of biodiversity. This\nStandard can be used by an organization of any size, type, sector or geographic location\nthat wants to report on its impacts related to this topic.', 1, '304'),
+(5, 'Biodiversity', 'Biodiversity sets out reporting requirements on the topic of biodiversity. This\nStandard can be used by an organization of any size, type, sector or geographic location\nthat wants to report on its impacts related to this topic.', 1, '304'),
 (6, 'Environmental Compliance', 'Environmental Compliance sets out reporting requirements on the topic\nof environmental compliance. This Standard can be used by an organization of any\nsize, type, sector or geographic location that wants to report on its impacts related\nto this topic.', 1, '307'),
 (7, 'Materials', 'Materials sets out reporting requirements on the topic of materials. This\nStandard can be used by an organization of any size, type, sector or geographic location\nthat wants to report on its impacts related to this topic.', 1, '301'),
 (8, 'Energy', 'Energy sets out reporting requirements on the topic of energy. This Standard\ncan be used by an organization of any size, type, sector or geographic location that\nwants to report on its impacts related to this topic.', 1, '302'),
@@ -270,20 +272,22 @@ INSERT INTO `user` (`userID`, `admin`, `userName`, `email`, `password`, `salt`, 
 --
 
 --
--- Index för tabell `attribute-orgs-sites`
---
-ALTER TABLE `attribute-orgs-sites`
-  ADD KEY `orgID` (`orgID`),
-  ADD KEY `attributeID` (`attributeID`),
-  ADD KEY `siteID` (`siteID`);
-
---
 -- Index för tabell `attributes`
 --
 ALTER TABLE `attributes`
   ADD PRIMARY KEY (`attributeID`),
   ADD KEY `subCatID` (`subCatID`),
   ADD KEY `griCatID` (`griCatID`);
+
+--
+-- Index för tabell `attribute_orgs_sites`
+--
+ALTER TABLE `attribute_orgs_sites`
+  ADD KEY `orgID` (`orgID`),
+  ADD KEY `attributeID` (`attributeID`),
+  ADD KEY `siteID` (`siteID`),
+  ADD KEY `griCatID` (`griCatID`),
+  ADD KEY `subCatID` (`subCatID`);
 
 --
 -- Index för tabell `cat`
@@ -373,18 +377,20 @@ ALTER TABLE `user`
 --
 
 --
--- Restriktioner för tabell `attribute-orgs-sites`
---
-ALTER TABLE `attribute-orgs-sites`
-  ADD CONSTRAINT `attribute-orgs-sites_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `attribute-orgs-sites_ibfk_2` FOREIGN KEY (`attributeID`) REFERENCES `attributes` (`attributeID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Restriktioner för tabell `attributes`
 --
 ALTER TABLE `attributes`
   ADD CONSTRAINT `attributes_ibfk_1` FOREIGN KEY (`subCatID`) REFERENCES `sub_cat` (`subCatID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `attributes_ibfk_2` FOREIGN KEY (`griCatID`) REFERENCES `cat` (`griCatID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Restriktioner för tabell `attribute_orgs_sites`
+--
+ALTER TABLE `attribute_orgs_sites`
+  ADD CONSTRAINT `attribute_orgs_sites_ibfk_1` FOREIGN KEY (`orgID`) REFERENCES `org_profile` (`orgID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `attribute_orgs_sites_ibfk_2` FOREIGN KEY (`attributeID`) REFERENCES `attributes` (`attributeID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `attribute_orgs_sites_ibfk_3` FOREIGN KEY (`griCatID`) REFERENCES `cat` (`griCatID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `attribute_orgs_sites_ibfk_4` FOREIGN KEY (`subCatID`) REFERENCES `sub_cat` (`subCatID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Restriktioner för tabell `org_profile`

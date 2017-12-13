@@ -62,6 +62,27 @@ var poly_total;
 	});
 	//*****************TRASPARENSPORTALEN***************************
 
+	//*************Register Attributes***********************************	
+	$('#body').on('click', '#save_attribute',function () {
+
+		var attributeData = $("#attributeData").val();
+		var attributeSource = $("#attributeSource").val();
+
+		var data = { attributeData: attributeData, attributeSource: attributeSource };
+
+			$.post("includes/models/register_attributes.inc.php", 
+				data
+			, function(data, status)
+			{
+				alert (data);
+			
+
+	});	
+});	
+
+
+
+
 
 	//*************När hem laddas körs en sökning***********************************
 
@@ -1015,7 +1036,6 @@ $('#filter_container').on('click', '.alpha_button',function () {
 		
 		$('#filter_container').css('display', 'none');
 		$('#content_top').load('includes/views/create_trail.inc.php');
-		$('#content_bot').load('includes/views/trail_info.inc.php');
 		$("#add_trail").css("display", "none");
 		$("#add_trail").css('bottom', '2%');
 		/*$('#undo_icon').css("display", "flex");*/

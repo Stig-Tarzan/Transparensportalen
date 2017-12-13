@@ -143,6 +143,7 @@ var poly_total;
 	//*************add attributes***********************************
 	$('#main_section').on('click', '#att_add_button',function () {
 		$("#att_addinfo_inner").css("display", "flex");
+		$('#attribute_list_container').show();
 
 		if (hasSite === 0){
 			$('<div id="att_addinfo_inner"></div>').appendTo('#attributes_container');
@@ -229,6 +230,7 @@ var poly_total;
 	//*************Search trails*********************************
 
 	$('#search_container').on('click', '#search_button',function () {
+		$('#attribute_list_container').hide();
 
 		$.post("includes/models/session_status.inc.php",{}, function(data, status)
 			{

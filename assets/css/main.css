@@ -159,16 +159,15 @@ button:focus {
 #attribute_list_container {
 
 	padding-top: 10px;
-	position: absolute;
-	margin-left: -35%;
-	left: 50%;
+
+
 	margin-top: 650px;
 
   	display: flex;
 
-  		display: flex;
+  	display: flex;
 	flex-direction: column;
-	position: relative;
+
 	
 	margin: 0 auto;
 	

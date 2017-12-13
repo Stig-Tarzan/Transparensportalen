@@ -743,12 +743,13 @@ var poly_total;
 	
    		
 		var selected_sub_cat = $(this).text();
-		var trim_selected_sub_cat = selected_sub_cat.slice(0,-4)
+		var trim_selected_sub_cat = selected_sub_cat.slice(0,-4);
+		var org = $("#org_name").text();
 			
 
 		var data = 
   		{ 
-   			selected_sub_cat: trim_selected_sub_cat
+   			selected_sub_cat: trim_selected_sub_cat, org:org
        		
    		}
       	$.post("includes/views/load_attributes.inc.php" , 

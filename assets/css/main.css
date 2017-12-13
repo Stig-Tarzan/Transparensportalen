@@ -2,7 +2,7 @@ body
 {
 	background-color: rgb(240,240,240);
 	margin:0;
-	flex-direction: 
+
 }
 
 
@@ -159,14 +159,15 @@ button:focus {
 #attribute_list_container {
 
 	padding-top: 10px;
-	position: absolute;
-	margin-left: -35%;
-	left: 50%;
+
+
 	margin-top: 650px;
 
   	display: flex;
+
+  	display: flex;
 	flex-direction: column;
-	position: relative;
+
 	
 	margin: 0 auto;
 	
@@ -174,7 +175,8 @@ button:focus {
 	width: 70%;
   	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   	min-width: 350px;
-  	margin-bottom: 20px;
+  	margin-top: 10px;
+  	
   	padding-bottom: 10px;
 }
 
@@ -249,7 +251,8 @@ button:focus {
 
 .banner
 {
-	position: relative;
+	z-index: 100;
+	position: sticky;
     left:0;
     top:0;
     width: 100%;
@@ -515,28 +518,16 @@ a#user_steg {
 {
 	display: flex;
 	flex-direction: column;
-	position: absolute;
-	margin-left: -35%;
-	left: 50%;
-	margin-top: 1%;
+	position: relative;
+	
+	margin: 0 auto;
+	
 	background-color: rgb(255,255,255);
 	width: 70%;
   	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   	min-width: 350px;
-  	margin-bottom: 20px;
-  	padding-bottom: 10px;
-
-
-  	padding-top: 10px;
-	position: absolute;
-	margin-left: -35%;
-	left: 50%;
-	margin-top: 650px;
-	background-color: rgb(255,255,255);
-	width: 70%;
-  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  	min-width: 350px;
-  	margin-bottom: 20px;
+  	margin-top: 10px;
+  	
   	padding-bottom: 10px;
 }
 #user_section input
@@ -627,16 +618,19 @@ input#user_agree {
 
 
 #user_section
-{
+{		
+
+	z-index: 100;
+	top: 60px;
 	overflow-wrap: break-word;
 	display: none;
 	flex-direction: column;
-	position: absolute;
+	position: fixed;
 	width: 10%;
 	
 	right: 0;
-	margin-right: 2.5%;
-	margin-top: 1%;
+	margin-right: 2%;
+	
 	background-color: rgb(255,255,255);
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 	padding-bottom: 20px;

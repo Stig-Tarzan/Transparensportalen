@@ -474,6 +474,7 @@ var poly_total;
      				if($('#sub_cat_container').length)
     				{
     					$("#sub_cat_container").replaceWith(data);
+    					$('.attribute_tiles').css("background-color","#a6dd9b");
     					$('#sub_cat_container').css("background-color","#5ca354");
     					$('.attribute_tiles').css("background-color","#79ce6f");
     					$('#environmental').css("background-color","#5ca354");

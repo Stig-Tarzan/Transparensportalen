@@ -461,8 +461,10 @@ var poly_total;
      			if(clicked_soc === 1 || clicked_eco === 1)
      			{
      				$("#sub_cat_container").replaceWith(data);
-     				$('#sub_cat_container').css("background-color","#a6dd9b");
-     				$('.attribute_tiles').css("background-color","#a6dd9b");
+     				$('#sub_cat_container').css("background-color","#5ca354");
+     				$('.attribute_tiles').css("background-color","#79ce6f");
+     				$('#environmental').css("background-color","#5ca354");
+     				$('#environmental').css("box-shadow","none");
      			}
 
      			else 
@@ -470,14 +472,18 @@ var poly_total;
      				if($('#sub_cat_container').length)
     				{
     					$("#sub_cat_container").replaceWith(data);
-    					$('#sub_cat_container').css("background-color","#a6dd9b");
-    					$('.attribute_tiles').css("background-color","#a6dd9b");
+    					$('#sub_cat_container').css("background-color","#5ca354");
+    					$('.attribute_tiles').css("background-color","#79ce6f");
+    					$('#environmental').css("background-color","#5ca354");
+    					$('#environmental').css("box-shadow","none");
     				}
      				else 
      				{
      					$(data).appendTo("#cat_outer_container");
-     					$('#sub_cat_container').css("background-color","#a6dd9b");
-     					$('.attribute_tiles').css("background-color","#a6dd9b");
+     					$('#sub_cat_container').css("background-color","#5ca354");
+     					$('.attribute_tiles').css("background-color","#79ce6f");
+     					$('#environmental').css("background-color","#5ca354");
+     					$('#environmental').css("box-shadow","none");
      				}
      				
      			

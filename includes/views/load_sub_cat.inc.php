@@ -9,12 +9,18 @@
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 		$griCatID = $row['griCatID'];
-		
+		$org_name = mysqli_real_escape_string($conn,$_POST['org']);
+
+		$sql = "SELECT * FROM org_profile WHERE orgName = '$org_name'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+		$org_id = $row['orgID'];
+
 		  $sql_env = "SELECT COUNT(attributeID) as no_att_total FROM attributes,sub_cat WHERE sub_cat.griCatID = 1 AND sub_cat.subCatID = attributes.subCatID" ;
 		  $env_result = mysqli_query($conn, $sql_env);
 		  $row_env_att = mysqli_fetch_assoc($env_result);
 
-		  $sql_env_this = "SELECT COUNT(attributeID) as no_att FROM `attribute_orgs_sites` WHERE griCatID = 1" ;
+		  $sql_env_this = "SELECT COUNT(attributeID) as no_att FROM `attribute_orgs_sites` WHERE griCatID = 1 AND orgID = '$org_id'" ;
 		  $env_result_this = mysqli_query($conn, $sql_env_this);
 		  $row_env_att_this = mysqli_fetch_assoc($env_result_this);
 
@@ -23,7 +29,7 @@
 
 
 		echo "<div id='sub_cat_container'>";
-		$sql_att = "SELECT * FROM sub_cat WHERE griCatID = '$griCatID'";
+		$sql_att = "SELECT * FROM sub_cat WHERE griCatID = '$griCatID' ";
 		$att_result = mysqli_query($conn, $sql_att);
 		while ($row_att = $att_result->fetch_assoc())
 		{

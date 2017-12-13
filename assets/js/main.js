@@ -515,12 +515,13 @@ var poly_total;
 
 
 	
-   
+   		var org = $("#org_name").text();
 		var selected_att_cat = this.id;
 
 		var data = 
   		{ 
-   			selected_att_cat: selected_att_cat
+   			selected_att_cat: selected_att_cat,
+   			org: org
        		
    		}
       	$.post("includes/views/load_sub_cat.inc.php" , 

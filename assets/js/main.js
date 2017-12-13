@@ -143,7 +143,6 @@ var poly_total;
 	//*************add attributes***********************************
 	$('#main_section').on('click', '#att_add_button',function () {
 		$("#att_addinfo_inner").css("display", "flex");
-		$('#attribute_list_container').show();
 
 		if (hasSite === 0){
 			$('<div id="att_addinfo_inner"></div>').appendTo('#attributes_container');
@@ -230,7 +229,6 @@ var poly_total;
 	//*************Search trails*********************************
 
 	$('#search_container').on('click', '#search_button',function () {
-		$('#attribute_list_container').hide();
 
 		$.post("includes/models/session_status.inc.php",{}, function(data, status)
 			{
@@ -522,7 +520,6 @@ var poly_total;
   		{ 
    			selected_att_cat: selected_att_cat,
    			org: org
-       		
    		}
       	$.post("includes/views/load_sub_cat.inc.php" , 
         	data
@@ -1031,7 +1028,7 @@ $('#filter_container').on('click', '.alpha_button',function () {
 	$('#profile_section').on('click', '#create_new_organization',function () 
 	{	
 
-		
+		$('#attribute_list_container').hide();
 		$('#filter_container').css('display', 'none');
 
 		$('#content_top').load('includes/views/trail_info.inc.php');

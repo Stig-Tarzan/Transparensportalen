@@ -37,12 +37,11 @@ date_default_timezone_set('Europe/Stockholm');
                 
                 <div id='filter_container'></div>
 
-                <div id='add_trail'></div>
+
 
                 <div id='content_top'></div>
 
-                <div id='undo_icon'></div>
-                <div id='save_icon'></div>
+
                 <div id='comment_icon'></div>
 
                 

@@ -17,10 +17,12 @@
 			<label id='sites_topic'>Siter</label>
 			<div id='att_add_button'></div>
 			<div id='added_sites_container'></div>
+
 			</div>
 			
 			<input type='hidden' name='org_creation_date_value' id='org_creation_date' value='".date('Y-m-d H:i:s')."'> 
 			<textarea name='org_info_value' id='org_info_value' placeholder='Ange information om er organisation' ></textarea>
+			<div id='save_button' class='button'>Save</div>
 			
 			
 				

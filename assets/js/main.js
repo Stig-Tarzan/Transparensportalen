@@ -141,7 +141,7 @@ var poly_total;
 
 
 	//*************add attributes***********************************
-	$('#content_bot').on('click', '#att_add_button',function () {
+	$('#main_section').on('click', '#att_add_button',function () {
 		$("#att_addinfo_inner").css("display", "flex");
 
 		if (hasSite === 0){
@@ -168,7 +168,7 @@ var poly_total;
 
 		var selected_att = $(this).parent().text();
 		
-			alert(selected_att);
+	
 		
 
 		var data = 
@@ -194,10 +194,10 @@ var poly_total;
 		
 	});
 	//*************add attributes***********************************
-	$('#content_bot').on('click', '#save_site',function () {
+	$('#main_section').on('click', '#save_site',function () {
 		
 
-		$('<div calss="sites">' + $("#site_name_value").val() + '<div id="remove_button"></div></div>').appendTo('#added_sites_container');
+		$('<div class="sites">' + $("#site_name_value").val() + '<div id="remove_button"></div></div>').appendTo('#added_sites_container');
 	
 		$("#att_addinfo_inner").css("display", "none");
 	hasSite++;
@@ -543,7 +543,6 @@ var poly_total;
 	     				$('#social').css("box-shadow","");
 	     				$('#economic').css("background-color","");
 	     				$('#economic').css("box-shadow","");
-
      			}
 
      			else 
@@ -739,15 +738,14 @@ var poly_total;
 
 
 	
-   
+   		
 		var selected_sub_cat = $(this).text();
-		
+		var trim_selected_sub_cat = selected_sub_cat.slice(0,-4)
 			
-		
 
 		var data = 
   		{ 
-   			selected_sub_cat: selected_sub_cat
+   			selected_sub_cat: trim_selected_sub_cat
        		
    		}
       	$.post("includes/views/load_attributes.inc.php" , 
@@ -776,15 +774,14 @@ var poly_total;
 
 
 	//*************Save organization*********************
-    $('#main_section').on('click', '#save_icon',function () 
+    $('#main_section').on('click', '#save_button',function () 
 
     {
-      	$('#content_bot').css('display', 'none');
-      	$("#add_trail").css("display", "flex");
-      	$("#add_trail").css('bottom', '2%');
-		$('#undo_icon').css("display", "none");
-		$('#save_icon').css("display", "none");
-		document.getElementById("content_top").innerHTML = "";
+    	
+
+
+  
+		window.location.replace("index.php");
 
 		var org_number_value = $('#org_number_value').val();
 		var org_name_value = $('#org_name_value').val();
@@ -1017,25 +1014,7 @@ $('#filter_container').on('click', '.alpha_button',function () {
     //***************************************************
 
 	//*************delete user***************************
-	$('#main_section').on('click', '#add_trail',function () 
-	{	
-
-		
-		$('#filter_container').css('display', 'none');
-		$('#content_top').load('includes/views/create_trail.inc.php');
-		$('#content_bot').load('includes/views/trail_info.inc.php');
-		$("#add_trail").css("display", "none");
-		$("#add_trail").css('bottom', '2%');
-		/*$('#undo_icon').css("display", "flex");*/
-		$('#save_icon').css("display", "flex");
-		$('#comment_icon').css("display", "none");
-		$('#content_bot').css('display', 'initial');
-		$('#content_bot_2').css("display", "none");
-		$('#content_top2').css("display", "none");
-		$('#delete_trail_button').css("display", "none");
-
-
-	});
+	
 	$('#main_section').on('click', '#undo_icon',function () 
 	{
 		
@@ -1043,12 +1022,17 @@ $('#filter_container').on('click', '.alpha_button',function () {
 
 	});
 
-		$('#profile_section').on('click', '#create_new_organization',function () 
+	
+
+
+	$('#profile_section').on('click', '#create_new_organization',function () 
 	{	
 
 		
 		$('#filter_container').css('display', 'none');
-		$('#content_top').load('includes/views/create_trail.inc.php');
+
+		$('#content_top').load('includes/views/trail_info.inc.php');
+
 		$("#add_trail").css("display", "none");
 		$("#add_trail").css('bottom', '2%');
 		/*$('#undo_icon').css("display", "flex");*/
@@ -1061,6 +1045,11 @@ $('#filter_container').on('click', '.alpha_button',function () {
 
 
 	});
+
+
+
+
+
 	$('#main_section').on('click', '#undo_icon',function () 
 	{
 		

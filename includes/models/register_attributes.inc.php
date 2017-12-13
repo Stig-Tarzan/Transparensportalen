@@ -22,11 +22,6 @@
 		$row = mysqli_fetch_assoc($result);
 		$selected_org_id = $row['orgID'];	
 
-		echo $org_name . " ";
-		echo $selected_org_id . " ";
-		echo $selected_attribute_id . " ";
-		echo $attributeData . " ";
-		echo $attributeSource . " ";
 
 		$sql= "INSERT INTO attribute_orgs_sites(orgID, attributeID, siteID, attributeData, griCatID, subCatID, source) 
 		VALUES ('$selected_org_id','$selected_attribute_id','1','$attributeData','1','1', '$attributeSource')";

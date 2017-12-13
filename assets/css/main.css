@@ -839,9 +839,11 @@ input#user_agree {
 /* styling for search_container and its contents*/
 
 #search_container input{
-	background-color: rgb(255,255,255);
+	background-color: #c9d6ff;
 	padding: 4px;
 }
+
+
 
 #search_container{
 	width: 30%;
@@ -854,7 +856,7 @@ input#user_agree {
 
 #search_input {
 	border:0;
-	background-color: blue;
+	background-color: gray;
 	width: 80%; 
 	margin-top: 15px;
 	margin-bottom: 26px;
@@ -880,7 +882,7 @@ input#user_agree {
 	background-color: #30b3ff;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
-	height: 24.4px;
+	height: 23px;
 	font-weight: bold;
 	color: white;
 	position: absolute;

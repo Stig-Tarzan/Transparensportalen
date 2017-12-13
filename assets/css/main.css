@@ -531,7 +531,7 @@ a#user_steg {
   	min-width: 350px;
   	margin-top: 10px;
   	
-  	padding-bottom: 10px;
+  	padding: none;
 }
 #user_section input
 {

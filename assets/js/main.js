@@ -65,24 +65,36 @@ var poly_total;
 	//*************Register Attributes***********************************	
 	$('#body').on('click', '#save_attribute',function () {
 
+
 		var attributeData = $("#attributeData").val();
 		var attributeSource = $("#attributeSource").val();
+		var selectedAttribute = $("#selected_attribute").text();
+		var orgName = $("#org_name").text();
 
-		var data = { attributeData: attributeData, attributeSource: attributeSource };
+
+
+		var data = { attributeData: attributeData, attributeSource: attributeSource, selectedAttribute: selectedAttribute, orgName: orgName };
 
 			$.post("includes/models/register_attributes.inc.php", 
 				data
 			, function(data, status)
 			{
 				alert (data);
-			
-
 	});	
+
 });	
 
 
+	//***************************************************
 
+	//*************cancel adding attributes***********************************
+	$('#body').on('click', '#cancel_save_attribute',function () {
 
+		window.location.href = 'index.php';
+		
+	});
+
+	//***************************************************
 
 	//*************När hem laddas körs en sökning***********************************
 
@@ -141,11 +153,12 @@ var poly_total;
 			$('#att_addinfo_inner').load('includes/views/add_site_info.php');
 		}
 	
-		
 
 		
 	});
 	//***************************************************
+
+
 
 
 	//*************edit attributes***********************************
@@ -177,7 +190,7 @@ var poly_total;
         	
      	});
 		
-
+      	$('#overlay').show();
 		
 	});
 	//*************add attributes***********************************

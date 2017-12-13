@@ -21,7 +21,7 @@
   echo "<input type='hidden' id='vote_trail_creator_name' value='$trail_creator'></input>"; 
   
   echo "<div id ='trail_information'";
-  echo "<label id='trail_name_in_display' value='$trail_name'><h1>$trail_name</h1></label>";
+  echo "<label id='trail_name_in_display' value='$trail_name'><h1 id='org_name'>$trail_name</h1></label>";
  
   echo "<text id='trail_description' value='$trail_name'>Beskrivning: $trail_description</text>";
   echo "</div>";

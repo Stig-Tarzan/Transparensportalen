@@ -440,6 +440,7 @@ var poly_total;
     $('#main_section').on('click', '.att_categories',function () 
 
     {
+    	$('#attribute_list_container').css('display', 'none');
 
 
 	
@@ -560,11 +561,12 @@ var poly_total;
     });
 	//***************************************************
 
-	//*************expand cats********************************
+	//*************expand sub_cats********************************
 
     $('#main_section').on('click', '.attribute_tiles ',function () 
 
     {
+    	$('#attribute_list_container').css('display', 'flex');
 
 
 	

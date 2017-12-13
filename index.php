@@ -22,9 +22,9 @@ date_default_timezone_set('Europe/Stockholm');
                
 
 
-            <title>Lämmeltåget</title>
+            <title>Transparensportalen</title>
             <div class='banner'>
-                <a href='index.php'class='banner_obj' id='lammeltaget'><H1>LämmelTåget</H1></a>
+                <a href='index.php'class='banner_obj' id='lammeltaget'><H1></H1></a>
                 <div id='user_info'></div>
                 <div id='search_container'></div>
             </div>
